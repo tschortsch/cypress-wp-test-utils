@@ -1,0 +1,21 @@
+{
+  "name": "cypress-e2e-test-utils",
+  "version": "1.0.0",
+  "description": "Cypress E2E test utils for WordPress",
+  "main": "src/",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "wp:start": "wp-env start",
+    "wp:stop": "wp-env stop"
+  },
+  "author": "Juerg Hunziker <juerg.hunziker@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/snapshot": "^2.1.7",
+    "@wordpress/env": "^1.1.0",
+    "@wordpress/url": "^2.12.0",
+    "cypress": "^4.3.0",
+    "cypress-xpath": "^1.4.0"
+  }
+}
