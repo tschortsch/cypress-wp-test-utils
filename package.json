@@ -2,8 +2,10 @@
   "name": "cypress-e2e-test-utils",
   "version": "1.0.0",
   "description": "Cypress E2E test utils for WordPress",
-  "main": "src/",
+  "main": "dist/main.js",
+  "private": true,
   "scripts": {
+    "build": "webpack",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "wp:start": "wp-env start",
@@ -16,6 +18,8 @@
     "@wordpress/env": "^1.1.0",
     "@wordpress/url": "^2.12.0",
     "cypress": "^4.3.0",
-    "cypress-xpath": "^1.4.0"
+    "cypress-xpath": "^1.4.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }
