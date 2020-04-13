@@ -13,13 +13,18 @@
   },
   "author": "Juerg Hunziker <juerg.hunziker@gmail.com>",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@cypress/snapshot": "^2.1.7",
-    "@wordpress/env": "^1.1.0",
     "@wordpress/url": "^2.12.0",
     "cypress": "^4.3.0",
-    "cypress-xpath": "^1.4.0",
+    "cypress-xpath": "^1.4.0"
+  },
+  "devDependencies": {
+    "@wordpress/env": "^1.1.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
+  },
+  "peerDependencies": {
+    "cypress": "4.x"
   }
 }
