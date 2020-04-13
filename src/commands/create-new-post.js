@@ -24,5 +24,7 @@ Cypress.Commands.add( 'createNewPost', ( {
 
 	cy.visitAdminPage( 'post-new.php', query );
 
-	cy.closeWelcomeGuide()
+	if ( ! showWelcomeGuide ) {
+		cy.closeWelcomeGuide()
+	}
 } )
