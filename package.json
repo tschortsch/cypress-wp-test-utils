@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "webpack",
-    "test:e2e": "cy:run",
+    "test:e2e": "npm run cy:run",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "wp:start": "wp-env start",
