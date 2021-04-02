@@ -17,10 +17,10 @@ import { WP_BASE_URL } from './config';
  * @return {string} String which represents full URL.
  */
 export function createURL( WPPath, query = '' ) {
-	const url = parse( WP_BASE_URL );
+	const url = new URL( WP_BASE_URL );
 
 	url.pathname = join( url.pathname, WPPath );
 	url.search = query;
 
-	return url.format();
+	return url.href;
 }
