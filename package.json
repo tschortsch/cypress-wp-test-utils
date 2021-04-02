@@ -18,7 +18,8 @@
     "@cypress/snapshot": "^2.1.7",
     "@wordpress/url": "^2.22.0",
     "cypress": "^6.8.0",
-    "cypress-xpath": "^1.6.2"
+    "cypress-xpath": "^1.6.2",
+    "path-browserify": "^1.0.1"
   },
   "devDependencies": {
     "@wordpress/env": "^4.0.0",

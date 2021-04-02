@@ -14,7 +14,3 @@
 // ***********************************************************
 
 require('../../dist/main')
-
-Cypress.Screenshot.defaults({
-	screenshotOnRunFailure: false,
-})

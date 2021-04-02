@@ -2,7 +2,6 @@
  * External dependencies
  */
 import { join } from 'path';
-import { parse } from 'url';
 
 /**
  * Internal dependencies
