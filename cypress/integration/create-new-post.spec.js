@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-context('cy.createNewPost()', () => {
+context('createNewPost Command', () => {
 	beforeEach(() => {
 		cy.loginUser()
 	})

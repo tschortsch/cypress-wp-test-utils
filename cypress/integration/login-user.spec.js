@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-context('cy.loginUser()', () => {
+context('loginUser Command', () => {
 	it('should login user', () => {
 		cy.loginUser()
 		cy.url().should('include', '/wp-admin')

@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-context('cy.visitAdminPage()', () => {
+context('visitAdminPage Command', () => {
 	beforeEach(() => {
 		cy.loginUser()
 	})
