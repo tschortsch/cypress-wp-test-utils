@@ -1,8 +1,8 @@
-Cypress.Commands.add( 'toolbarOptionIsActive', ( toolbarLabel, buttonText ) => {
-	cy.clickBlockToolbarButton( toolbarLabel );
+Cypress.Commands.add( 'toolbarOptionIsActive', ( toolbarLabel, buttonText, toolbarIndex = 0, buttonIndex = 0 ) => {
+	cy.clickBlockToolbarButton( toolbarLabel, toolbarIndex );
 	cy
 		.xpath(
 			`//button[contains(text(),"${ buttonText }") and contains(@class,"is-active")]`
-		).should('exist')
-	cy.clickBlockToolbarButton( toolbarLabel );
+		).eq(buttonIndex).should('exist')
+	cy.clickBlockToolbarButton( toolbarLabel, toolbarIndex );
 } )

@@ -17,5 +17,20 @@ module.exports = {
     "should click on button by content": {
       "1": "<!-- wp:heading -->\n<h2></h2>\n<!-- /wp:heading -->"
     }
+  },
+  "selectOptionIsAvailable Command": {
+    "should set given post content": {
+      "1": "<!-- wp:paragraph -->\n<p>content</p>\n<!-- /wp:paragraph -->"
+    }
+  },
+  "postContentMatchesSnapshot Command": {
+    "should match against snapshot": {
+      "1": ""
+    }
+  },
+  "setTextControlValueByLabel Command": {
+    "should set text control value by label": {
+      "1": "<!-- wp:buttons -->\n<div class=\"wp-block-buttons\"><!-- wp:button -->\n<div class=\"wp-block-button\"><a class=\"wp-block-button__link\" rel=\"my rel\"></a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons -->"
+    }
   }
 }

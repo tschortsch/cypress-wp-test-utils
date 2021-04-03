@@ -12,8 +12,8 @@ type BlockToolbarButtonType = 'ariaLabel' | 'content';
 
 declare namespace Cypress {
 	interface Chainable<Subject> {
-		clickBlockToolbarButton(label: string): Chainable<void>
-		clickElementByText(elementExpression: string, text: string, strict?: boolean): Chainable<void>
+		clickBlockToolbarButton(label: string, index?: number): Chainable<void>
+		clickElementByText(elementExpression: string, text: string, strict?: boolean, index?: number): Chainable<void>
 		clickButton(label: string, type?: BlockToolbarButtonType): Chainable<void>
 		closeWelcomeGuide(): Chainable<void>
 		createNewPost(createNewPostParams?: CreateNewPostParams): Chainable<void>
@@ -28,7 +28,7 @@ declare namespace Cypress {
 		visitAdminPage(adminPath: string, query?: string): Chainable<void>
 		ensureSidebarOpened(): Chainable<void>
 		setPostContent(content: string): Chainable<void>
-		toolbarOptionIsActive(toolbarLabel: string, buttonText: string): Chainable<void>
+		toolbarOptionIsActive(toolbarLabel: string, buttonText: string, toolbarIndex?: number, buttonIndex?: number): Chainable<void>
 		getInputByLabel(label: string): Chainable<Element>
 		getCheckboxByLabel(label: string): Chainable<Element>
 		getSelectByLabel(label: string): Chainable<Element>
