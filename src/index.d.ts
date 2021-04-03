@@ -8,11 +8,13 @@ interface CreateNewPostParams {
 	showWelcomeGuide?: boolean;
 }
 
+type BlockToolbarButtonType = 'ariaLabel' | 'content';
+
 declare namespace Cypress {
 	interface Chainable<Subject> {
-		clickBlockToolbarButton(label: string, type?: string): Chainable<void>
+		clickBlockToolbarButton(label: string): Chainable<void>
 		clickElementByText(elementExpression: string, text: string, strict?: boolean): Chainable<void>
-		clickButton(buttonText: string): Chainable<void>
+		clickButton(label: string, type?: BlockToolbarButtonType): Chainable<void>
 		closeWelcomeGuide(): Chainable<void>
 		createNewPost(createNewPostParams?: CreateNewPostParams): Chainable<void>
 		insertBlock(searchTerm: string, blockLabel?: string, panelName?: string): Chainable<void>
