@@ -26,12 +26,14 @@ jobs:
             ${{ runner.OS }}-
       - name: Install dependencies
         run: npm ci
+      - name: Install docker
+        run: |
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          sudo sh get-docker.sh
       - name: Lint
         run: npm run lint
       - name: Start WordPress environment
         run: |
-          curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-          chmod +x /usr/local/bin/docker-compose
           chmod -R 767 ./ # TODO: Possibly integrate in wp-env
           npm run wp:start
       - name: Run E2E tests
