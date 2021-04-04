@@ -15,11 +15,11 @@ import { WP_BASE_URL } from './config';
  * @param {?string} query String to be serialized as query portion of URL.
  * @return {string} String which represents full URL.
  */
-export function createURL( WPPath, query = '' ) {
-	const url = new URL( WP_BASE_URL );
+export const createURL = (WPPath, query = '') => {
+  const url = new URL(WP_BASE_URL);
 
-	url.pathname = join( url.pathname, WPPath );
-	url.search = query;
+  url.pathname = join(url.pathname, WPPath);
+  url.search = query;
 
-	return url.href;
-}
+  return url.href;
+};

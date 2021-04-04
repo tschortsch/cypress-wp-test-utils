@@ -1,31 +1,31 @@
-import 'cypress-xpath'
-import { register } from '@cypress/snapshot'
+import 'cypress-xpath';
+import { register } from '@cypress/snapshot';
 
-import './commands/login-user'
-import './commands/visit-admin-page'
-import './commands/close-welcome-guide'
-import './commands/click-button'
-import './commands/click-element-by-text'
-import './commands/click-block-toolbar-button'
-import './commands/open-sidebar-panel'
-import './commands/create-new-post'
-import './commands/open-global-block-inserter'
-import './commands/search-for-block'
-import './commands/insert-block'
-import './commands/post-content-matches-snapshot'
-import './commands/select-block-by-name'
-import './commands/ensure-sidebar-opened'
-import './commands/set-post-content'
-import './commands/toolbar-option-is-active'
-import './commands/open-sidebar-panel-with-title'
-import './commands/get-input-by-label'
-import './commands/get-checkbox-by-label'
-import './commands/activate-plugin'
-import './commands/deactivate-plugin'
-import './commands/get-select-by-label'
-import './commands/select-option-is-available'
-import './commands/get-text-control-by-label'
-import './commands/set-text-control-value-by-label'
-import './commands/get-toggle-by-label'
+import './commands/login-user';
+import './commands/visit-admin-page';
+import './commands/close-welcome-guide';
+import './commands/click-button';
+import './commands/click-element-by-text';
+import './commands/click-block-toolbar-button';
+import './commands/open-sidebar-panel';
+import './commands/create-new-post';
+import './commands/open-global-block-inserter';
+import './commands/search-for-block';
+import './commands/insert-block';
+import './commands/post-content-matches-snapshot';
+import './commands/select-block-by-name';
+import './commands/ensure-sidebar-opened';
+import './commands/set-post-content';
+import './commands/toolbar-option-is-active';
+import './commands/open-sidebar-panel-with-title';
+import './commands/get-input-by-label';
+import './commands/get-checkbox-by-label';
+import './commands/activate-plugin';
+import './commands/deactivate-plugin';
+import './commands/get-select-by-label';
+import './commands/select-option-is-available';
+import './commands/get-text-control-by-label';
+import './commands/set-text-control-value-by-label';
+import './commands/get-toggle-by-label';
 
 register();

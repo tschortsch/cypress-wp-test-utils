@@ -2,31 +2,50 @@
   "name": "cypress-wp-test-utils",
   "version": "1.0.0",
   "description": "Cypress test utilities for WordPress",
-  "main": "dist/main.js",
   "private": true,
+  "author": "Juerg Hunziker <juerg.hunziker@gmail.com>",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "WordPress",
+    "cypress",
+    "e2e",
+    "cypress-wp-test-utils"
+  ],
+  "homepage": "https://github.com/tschortsch/cypress-wp-test-utils",
+  "repository": "git+https://github.com/tschortsch/cypress-wp-test-utils.git",
+  "bugs": {
+    "url": "https://github.com/tschortsch/cypress-wp-test-utils/issues"
+  },
+  "main": "dist/main.js",
+  "dependencies": {
+    "@cypress/snapshot": "^2.1.7",
+    "@wordpress/url": "^2.22.0",
+    "cypress": "^6.8.0",
+    "cypress-plugin-snapshots": "^1.4.4",
+    "cypress-xpath": "^1.6.2",
+    "path-browserify": "^1.0.1"
+  },
+  "devDependencies": {
+    "@wordpress/env": "^4.0.0",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0"
+  },
+  "peerDependencies": {
+    "cypress": "6.x"
+  },
   "scripts": {
     "build": "webpack",
     "test:e2e": "npm run cy:run",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "wp:start": "wp-env start",
-    "wp:stop": "wp-env stop"
-  },
-  "author": "Juerg Hunziker <juerg.hunziker@gmail.com>",
-  "license": "ISC",
-  "dependencies": {
-    "@cypress/snapshot": "^2.1.7",
-    "@wordpress/url": "^2.22.0",
-    "cypress": "^6.8.0",
-    "cypress-xpath": "^1.6.2",
-    "path-browserify": "^1.0.1"
-  },
-  "devDependencies": {
-    "@wordpress/env": "^4.0.0",
-    "webpack": "^5.30.0",
-    "webpack-cli": "^4.6.0"
-  },
-  "peerDependencies": {
-    "cypress": "6.x"
+    "wp:stop": "wp-env stop",
+    "lint": "eslint src/**/*.js *.js",
+    "lint-fix": "eslint --fix src/**/*.js *.js"
   }
 }

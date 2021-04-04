@@ -6,10 +6,17 @@
  * @param {string} blockLabel The label of the block to insert.
  * @param {string} panelName  The inserter panel to open (if it's closed by default).
  */
-Cypress.Commands.add( 'insertBlock', ( searchTerm, blockLabel = searchTerm, panelName = null ) => {
-	cy.searchForBlock( searchTerm );
-	if ( panelName ) {
-		cy.xpath( `//button[contains(text(), '${ panelName }')]` ).click( { force: true } );
-	}
-	cy.xpath( `//button//span[contains(text(), '${ blockLabel }')]` ).click( { force: true } );
-} )
+Cypress.Commands.add(
+  'insertBlock',
+  (searchTerm, blockLabel = searchTerm, panelName = null) => {
+    cy.searchForBlock(searchTerm);
+    if (panelName) {
+      cy.xpath(`//button[contains(text(), '${panelName}')]`).click({
+        force: true,
+      });
+    }
+    cy.xpath(`//button//span[contains(text(), '${blockLabel}')]`).click({
+      force: true,
+    });
+  }
+);
