@@ -24,10 +24,13 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-node-
             ${{ runner.OS }}-
-      - name: npm install, build, and test
+      - name: Install dependencies
+        run: npm ci
+      - name: Start WordPress environment
         run: |
-          npm ci
-          npm run lint
+          chmod -R 767 ./ # TODO: Possibly integrate in wp-env
           npm run wp:start
-          npm run test:e2e
-          kill $(jobs -p) || true
+      - name: Lint
+        run: npm run lint
+      - name: Run E2E tests
+        run: npm run test:e2e
