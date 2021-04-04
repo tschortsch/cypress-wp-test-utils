@@ -27,7 +27,6 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm ci
-          npm --prefix cypress ci
           npm run lint &
           npm run test:e2e
           kill $(jobs -p) || true
