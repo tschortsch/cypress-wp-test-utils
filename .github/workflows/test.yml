@@ -27,6 +27,7 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm ci
-          npm run lint &
+          npm run lint
+          npm run wp:start
           npm run test:e2e
           kill $(jobs -p) || true
