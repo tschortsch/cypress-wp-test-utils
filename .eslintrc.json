@@ -4,7 +4,8 @@
     "plugin:cypress/recommended"
   ],
   "plugins": [
-    "prettier"
+    "prettier",
+    "cypress"
   ],
   "rules": {
     "prettier/prettier": [

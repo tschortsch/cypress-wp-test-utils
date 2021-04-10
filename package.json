@@ -43,7 +43,7 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "wp-env": "wp-env",
-    "lint": "eslint src/**/*.js *.js",
-    "lint-fix": "eslint --fix src/**/*.js *.js"
+    "lint": "eslint src/**/*.js *.js cypress/**/*.js",
+    "lint-fix": "eslint --fix src/**/*.js *.js cypress/**/*.js"
   }
 }
