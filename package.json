@@ -16,34 +16,31 @@
   "bugs": {
     "url": "https://github.com/tschortsch/cypress-wp-test-utils/issues"
   },
-  "main": "dist/main.js",
+  "main": "src/",
   "dependencies": {
-    "@wordpress/url": "^2.22.0",
+    "@wordpress/url": "^2.22.1",
     "cypress-xpath": "^1.6.2",
     "path-browserify": "^1.0.1"
   },
   "devDependencies": {
     "@cypress/snapshot": "^2.1.7",
-    "@wordpress/env": "^4.0.0",
-    "cypress": "^6.9.1",
-    "eslint": "^7.23.0",
+    "@wordpress/env": "^4.0.1",
+    "cypress": "^7.0.1",
+    "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "^2.2.1",
-    "webpack": "^5.30.0",
-    "webpack-cli": "^4.6.0"
+    "prettier": "^2.2.1"
   },
   "peerDependencies": {
-    "cypress": "6.x"
+    "cypress": ">=6.x"
   },
   "scripts": {
-    "build": "webpack",
     "test:e2e": "npm run cy:run",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "wp-env": "wp-env",
     "lint": "eslint src/**/*.js *.js cypress/**/*.js",
-    "lint-fix": "eslint --fix src/**/*.js *.js cypress/**/*.js"
+    "lint:fix": "eslint --fix src/**/*.js *.js cypress/**/*.js"
   }
 }
