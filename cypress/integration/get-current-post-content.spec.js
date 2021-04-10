@@ -8,6 +8,7 @@ context('getCurrentPostContent Command', () => {
 
   it('should return current post content', () => {
     cy.insertBlock('Heading');
-    cy.getCurrentPostContent().snapshot();
+    // TODO implement test for getCurrentPostContent command
+    cy.getCurrentPostContent();
   });
 });
