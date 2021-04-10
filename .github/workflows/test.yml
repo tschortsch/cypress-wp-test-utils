@@ -30,6 +30,6 @@ jobs:
       - name: Start WordPress environment
         run: |
           chmod -R 767 ./ # TODO: Possibly integrate in wp-env
-          npm run wp:start
+          npm run wp-env start
       - name: Run E2E tests
         run: npm run test:e2e
