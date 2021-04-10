@@ -26,7 +26,7 @@ context('createNewPost Command', () => {
       .within(() => {
         cy.get('.wp-block-freeform').contains(content);
       });
-    cy.openSidebarPanel('Excerpt');
+    cy.openSidebarPanelWithTitle('Excerpt');
     cy.get('.editor-post-excerpt .components-textarea-control__input').contains(
       excerpt
     );
