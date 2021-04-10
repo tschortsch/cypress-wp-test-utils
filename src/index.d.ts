@@ -22,7 +22,8 @@ declare namespace Cypress {
 		openGlobalBlockInserter(): Chainable<void>
 		openSidebarPanel(title: string): Chainable<void>
 		openSidebarPanelWithTitle(title: string): Chainable<void>
-		postContentMatchesSnapshot(): Chainable<void>
+    getCurrentPostContent(): Chainable<void>
+    getEditedPostContent(): Chainable<void>
 		searchForBlock(searchTerm: string): Chainable<void>
 		selectBlockByName(name: string, index?: number): Chainable<void>
 		visitAdminPage(adminPath: string, query?: string): Chainable<void>

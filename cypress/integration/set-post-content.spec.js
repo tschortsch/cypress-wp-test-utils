@@ -10,6 +10,6 @@ context( 'selectOptionIsAvailable Command', () => {
 		cy.setPostContent(
 			'<!-- wp:paragraph --><p>content</p><!-- /wp:paragraph -->'
 		);
-		cy.postContentMatchesSnapshot();
+    cy.getEditedPostContent().snapshot();
 	} );
 } );

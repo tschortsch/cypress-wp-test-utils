@@ -11,6 +11,6 @@ context( 'clickBlockToolbarButton Command', () => {
 		cy.selectBlockByName( 'core/heading' );
 		cy.clickBlockToolbarButton( 'Change heading level' );
 		cy.get( 'button[aria-label="Heading 3"]' ).click();
-		cy.postContentMatchesSnapshot();
+		cy.getEditedPostContent().snapshot();
 	} );
 } );

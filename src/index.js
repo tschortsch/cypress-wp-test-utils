@@ -1,5 +1,4 @@
 import 'cypress-xpath';
-import { register } from '@cypress/snapshot';
 
 import './commands/login-user';
 import './commands/visit-admin-page';
@@ -12,7 +11,8 @@ import './commands/create-new-post';
 import './commands/open-global-block-inserter';
 import './commands/search-for-block';
 import './commands/insert-block';
-import './commands/post-content-matches-snapshot';
+import './commands/get-current-post-content';
+import './commands/get-edited-post-content';
 import './commands/select-block-by-name';
 import './commands/ensure-sidebar-opened';
 import './commands/set-post-content';
@@ -27,5 +27,3 @@ import './commands/select-option-is-available';
 import './commands/get-text-control-by-label';
 import './commands/set-text-control-value-by-label';
 import './commands/get-toggle-by-label';
-
-register();

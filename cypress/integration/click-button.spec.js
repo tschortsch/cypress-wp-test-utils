@@ -11,7 +11,7 @@ context( 'clickButton Command', () => {
 		cy.selectBlockByName( 'core/heading' );
 		cy.clickBlockToolbarButton( 'Options' );
 		cy.clickButton( 'Copy', 'content' );
-		cy.postContentMatchesSnapshot();
+		cy.getEditedPostContent().snapshot();
 	} );
 
 	it( 'should click on button by aria-label', () => {

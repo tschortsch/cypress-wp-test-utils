@@ -10,6 +10,6 @@ context( 'setTextControlValueByLabel Command', () => {
 		cy.insertBlock( 'Buttons' );
 		cy.ensureSidebarOpened();
 		cy.setTextControlValueByLabel( 'Link rel', 'my rel' );
-		cy.postContentMatchesSnapshot();
+    cy.getEditedPostContent().snapshot();
 	} );
 } );

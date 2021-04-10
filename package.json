@@ -18,15 +18,14 @@
   },
   "main": "dist/main.js",
   "dependencies": {
-    "@cypress/snapshot": "^2.1.7",
     "@wordpress/url": "^2.22.0",
-    "cypress": "^6.8.0",
-    "cypress-plugin-snapshots": "^1.4.4",
     "cypress-xpath": "^1.6.2",
     "path-browserify": "^1.0.1"
   },
   "devDependencies": {
+    "@cypress/snapshot": "^2.1.7",
     "@wordpress/env": "^4.0.0",
+    "cypress": "^6.9.1",
     "eslint": "^7.23.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-cypress": "^2.11.2",
@@ -43,8 +42,7 @@
     "test:e2e": "npm run cy:run",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "wp:start": "wp-env start",
-    "wp:stop": "wp-env stop",
+    "wp-env": "wp-env",
     "lint": "eslint src/**/*.js *.js",
     "lint-fix": "eslint --fix src/**/*.js *.js"
   }

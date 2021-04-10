@@ -13,4 +13,7 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-require( '../../src' );
+import { register } from '@cypress/snapshot';
+require('../../src');
+
+register();
