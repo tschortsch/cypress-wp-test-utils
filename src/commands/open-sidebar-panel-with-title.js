@@ -1,4 +1,4 @@
-Cypress.Commands.add('openSidebarPanelWithTitle', (title) => {
+export const openSidebarPanelWithTitle = (title) => {
   cy.ensureSidebarOpened();
 
   // Check if sidebar panel exists
@@ -19,4 +19,4 @@ Cypress.Commands.add('openSidebarPanelWithTitle', (title) => {
       cy.wrap(panelClosed).click({ force: true });
     }
   });
-});
+};

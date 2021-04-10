@@ -1,4 +1,4 @@
-Cypress.Commands.add('activatePlugin', (slug) => {
+export const activatePlugin = (slug) => {
   cy.visitAdminPage('plugins.php').then(() => {
     const log = Cypress.log({
       name: 'activatePlugin',
@@ -40,4 +40,4 @@ Cypress.Commands.add('activatePlugin', (slug) => {
       }
     });
   });
-});
+};

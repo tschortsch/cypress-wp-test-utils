@@ -4,7 +4,7 @@
  * @param {string} label The text string of the button label.
  * @param {string} [type] The type of button label: 'ariaLabel' or 'content'.
  */
-Cypress.Commands.add('clickButton', (label, type = 'content') => {
+export const clickButton = (label, type = 'content') => {
   if (type === 'ariaLabel') {
     cy.get(`button[aria-label="${label}"]`).click({ force: true });
   }
@@ -14,4 +14,4 @@ Cypress.Commands.add('clickButton', (label, type = 'content') => {
       force: true,
     });
   }
-});
+};

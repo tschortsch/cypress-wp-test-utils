@@ -10,19 +10,16 @@ import { createURL } from '../shared/create-url';
  * @param {?string} username String to be used as user credential.
  * @param {?string} password String to be used as user credential.
  */
-Cypress.Commands.add(
-  'loginUser',
-  (username = WP_USERNAME, password = WP_PASSWORD) => {
-    cy.visit(createURL('wp-login.php'));
+export const loginUser = (username = WP_USERNAME, password = WP_PASSWORD) => {
+  cy.visit(createURL('wp-login.php'));
 
-    // somehow we need to wait for some time before entering the credentials
-    // eslint-disable-next-line cypress/no-unnecessary-waiting
-    cy.wait(500);
+  // somehow we need to wait for some time before entering the credentials
+  // eslint-disable-next-line cypress/no-unnecessary-waiting
+  cy.wait(500);
 
-    cy.get('#user_login').clear().type(username);
+  cy.get('#user_login').clear().type(username);
 
-    cy.get('#user_pass').clear().type(password);
+  cy.get('#user_pass').clear().type(password);
 
-    cy.get('#wp-submit').click({ force: true });
-  }
-);
+  cy.get('#wp-submit').click({ force: true });
+};

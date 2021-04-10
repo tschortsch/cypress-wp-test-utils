@@ -14,6 +14,7 @@
 // ***********************************************************
 
 import { register } from '@cypress/snapshot';
-require('../../src');
+import { registerWpTestCommands } from '../../src';
 
 register();
+registerWpTestCommands();

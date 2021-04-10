@@ -1,4 +1,4 @@
-Cypress.Commands.add('ensureSidebarOpened', () => {
+export const ensureSidebarOpened = () => {
   cy.window({ log: false }).then((window) => {
     const log = Cypress.log({
       name: 'ensureSidebarOpened',
@@ -20,4 +20,4 @@ Cypress.Commands.add('ensureSidebarOpened', () => {
         }
       });
   });
-});
+};

@@ -1,3 +1,3 @@
-Cypress.Commands.add('getInputByLabel', (label) => {
+export const getInputByLabel = (label) => {
   cy.get(`input[aria-label="${label}"]`);
-});
+};

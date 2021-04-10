@@ -1,4 +1,4 @@
-Cypress.Commands.add('closeWelcomeGuide', () => {
+export const closeWelcomeGuide = () => {
   cy.window().then((window) => {
     const isWelcomeGuideActive = window.wp.data
       .select('core/edit-post')
@@ -9,4 +9,4 @@ Cypress.Commands.add('closeWelcomeGuide', () => {
       cy.reload();
     }
   });
-});
+};
