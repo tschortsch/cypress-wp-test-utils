@@ -1,15 +1,15 @@
 {
   "name": "cypress-wp-test-utils",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Cypress test utilities for WordPress",
-  "private": true,
   "author": "Juerg Hunziker <juerg.hunziker@gmail.com>",
   "license": "GPL-2.0-or-later",
   "keywords": [
     "WordPress",
     "cypress",
     "e2e",
-    "cypress-wp-test-utils"
+    "cypress-wp-test-utils",
+    "Gutenberg"
   ],
   "homepage": "https://github.com/tschortsch/cypress-wp-test-utils",
   "repository": "git+https://github.com/tschortsch/cypress-wp-test-utils.git",

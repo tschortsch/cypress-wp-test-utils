@@ -1,0 +1,12 @@
+.github/
+.idea/
+cypress/
+node_modules/
+.editorconfig
+.eslintignore
+.eslintrc.json
+.gitignore
+.npmignore
+.wp-env.json
+cypress.json
+snapshots.js
