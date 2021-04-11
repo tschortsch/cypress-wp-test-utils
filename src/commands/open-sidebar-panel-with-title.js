@@ -1,3 +1,8 @@
+/**
+ * Opens sidebar panel with given title (if closed).
+ *
+ * @param {string} title Title of sidebar panel to open.
+ */
 export const openSidebarPanelWithTitle = (title) => {
   cy.ensureSidebarOpened();
 

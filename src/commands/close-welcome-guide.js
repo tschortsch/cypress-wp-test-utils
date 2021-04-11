@@ -1,3 +1,6 @@
+/**
+ * Closes the welcome guide if displayed.
+ */
 export const closeWelcomeGuide = () => {
   cy.window().then((window) => {
     const isWelcomeGuideActive = window.wp.data

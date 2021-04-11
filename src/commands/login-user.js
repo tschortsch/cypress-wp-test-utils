@@ -1,6 +1,3 @@
-/**
- * Internal dependencies
- */
 import { WP_USERNAME, WP_PASSWORD } from '../shared/config';
 import { createURL } from '../shared/create-url';
 

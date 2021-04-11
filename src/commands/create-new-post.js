@@ -1,12 +1,14 @@
-/**
- * WordPress dependencies
- */
 import { addQueryArgs } from '@wordpress/url';
 
 /**
  * Creates new post.
  *
- * @param {Object} obj Object to create new post, along with tips enabling option.
+ * @param {Object}  object                    Object to create new post, along with tips enabling option.
+ * @param {string}  [object.postType]         Post type of the new post.
+ * @param {string}  [object.title]            Title of the new post.
+ * @param {string}  [object.content]          Content of the new post.
+ * @param {string}  [object.excerpt]          Excerpt of the new post.
+ * @param {boolean} [object.showWelcomeGuide] Whether to show the welcome guide or not.
  */
 export const createNewPost = ({
   postType,

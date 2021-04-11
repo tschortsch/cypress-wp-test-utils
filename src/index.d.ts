@@ -15,7 +15,7 @@ declare namespace Cypress {
     activatePlugin(slug: string): Chainable<void>
     clickBlockToolbarButton(label: string, index?: number): Chainable<void>
     clickButton(label: string, type?: BlockToolbarButtonType): Chainable<void>
-    clickElementByText(elementExpression: string, text: string, strict?: boolean, index?: number): Chainable<void>
+    clickElementByText(elementType: string, text: string, strict?: boolean, index?: number): Chainable<void>
     closeWelcomeGuide(): Chainable<void>
     createNewPost(createNewPostParams?: CreateNewPostParams): Chainable<void>
     deactivatePlugin(slug: string): Chainable<void>
@@ -27,7 +27,7 @@ declare namespace Cypress {
     getSelectByLabel(label: string): Chainable<Element>
     getTextControlByLabel(label: string): Chainable<Element>
     getToggleByLabel(label: string): Chainable<Element>
-    insertBlock(searchTerm: string, blockLabel?: string, panelName?: string): Chainable<void>
+    insertBlock(searchTerm: string, blockLabel?: string): Chainable<void>
     loginUser(username?: string, password?: string): Chainable<void>
     openGlobalBlockInserter(): Chainable<void>
     openSidebarPanelWithTitle(title: string): Chainable<void>

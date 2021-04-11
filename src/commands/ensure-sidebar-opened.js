@@ -1,3 +1,6 @@
+/**
+ * Ensures that the sidebar is opened (opens sidebar if closed).
+ */
 export const ensureSidebarOpened = () => {
   cy.window({ log: false }).then((window) => {
     const log = Cypress.log({

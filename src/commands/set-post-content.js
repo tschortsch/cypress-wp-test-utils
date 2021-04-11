@@ -1,3 +1,8 @@
+/**
+ * Sets the editor content
+ *
+ * @param {string} content New editor content.
+ */
 export const setPostContent = (content) => {
   // TODO: We have to insert at least one block before setting the post content
   cy.insertBlock('Paragraph');

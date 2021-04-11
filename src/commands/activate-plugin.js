@@ -1,3 +1,8 @@
+/**
+ * Activates a plugin.
+ *
+ * @param {string} slug Slug of the plugin which should be activated.
+ */
 export const activatePlugin = (slug) => {
   cy.visitAdminPage('plugins.php').then(() => {
     const log = Cypress.log({

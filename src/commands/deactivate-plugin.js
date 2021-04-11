@@ -1,3 +1,8 @@
+/**
+ * Deactivates a plugin.
+ *
+ * @param {string} slug Slug of the plugin which should be deactivated.
+ */
 export const deactivatePlugin = (slug) => {
   cy.visitAdminPage('plugins.php').then(() => {
     const log = Cypress.log({

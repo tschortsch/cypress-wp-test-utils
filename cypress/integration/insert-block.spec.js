@@ -10,4 +10,9 @@ context('insertBlock Command', () => {
     cy.insertBlock('Paragraph');
     cy.get('[data-type="core/paragraph"]').should('have.length', 1);
   });
+
+  it('should insert correct block when multiple blocks where found', () => {
+    cy.insertBlock('Cloud', 'Tag Cloud');
+    cy.get('[data-type="core/tag-cloud"]').should('have.length', 1);
+  });
 });
