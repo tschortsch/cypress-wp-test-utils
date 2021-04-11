@@ -40,3 +40,5 @@ declare namespace Cypress {
     visitAdminPage(adminPath: string, query?: string): Chainable<void>
   }
 }
+
+export function registerWpTestCommands(): void;
