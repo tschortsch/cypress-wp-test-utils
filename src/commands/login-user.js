@@ -1,4 +1,4 @@
-import { WP_USERNAME, WP_PASSWORD } from '../shared/config';
+import config from '../shared/config';
 
 /**
  * Performs a login with specified username and password.
@@ -6,7 +6,10 @@ import { WP_USERNAME, WP_PASSWORD } from '../shared/config';
  * @param {?string} username Username which should be used.
  * @param {?string} password Password which should be used.
  */
-export const loginUser = (username = WP_USERNAME, password = WP_PASSWORD) => {
+export const loginUser = (
+  username = config.username,
+  password = config.password
+) => {
   cy.visit('wp-login.php');
 
   // somehow we need to wait for some time before entering the credentials
