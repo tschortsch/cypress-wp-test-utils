@@ -7,9 +7,11 @@
   "keywords": [
     "WordPress",
     "cypress",
+    "command",
     "e2e",
-    "cypress-wp-test-utils",
-    "Gutenberg"
+    "testing",
+    "Gutenberg",
+    "editor"
   ],
   "homepage": "https://github.com/tschortsch/cypress-wp-test-utils",
   "repository": "git+https://github.com/tschortsch/cypress-wp-test-utils.git",
