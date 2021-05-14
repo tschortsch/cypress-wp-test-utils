@@ -1,14 +1,13 @@
 import { WP_USERNAME, WP_PASSWORD } from '../shared/config';
-import { createURL } from '../shared/create-url';
 
 /**
  * Performs a login with specified username and password.
  *
- * @param {?string} username String to be used as user credential.
- * @param {?string} password String to be used as user credential.
+ * @param {?string} username Username which should be used.
+ * @param {?string} password Password which should be used.
  */
 export const loginUser = (username = WP_USERNAME, password = WP_PASSWORD) => {
-  cy.visit(createURL('wp-login.php'));
+  cy.visit('wp-login.php');
 
   // somehow we need to wait for some time before entering the credentials
   // eslint-disable-next-line cypress/no-unnecessary-waiting

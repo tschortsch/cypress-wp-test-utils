@@ -1,12 +1,11 @@
 import { join } from 'path';
-import { createURL } from '../shared/create-url';
 
 /**
  * Visits a given admin page.
  *
- * @param {string} adminPath String to be serialized as pathname.
- * @param {string} query String to be serialized as query portion of URL.
+ * @param {string} adminPath Path to admin page.
+ * @param {string} [query] Query string which should be added to URL.
  */
 export const visitAdminPage = (adminPath, query) => {
-  cy.visit(createURL(join('wp-admin', adminPath), query));
+  cy.visit(`${join('/wp-admin', adminPath)}${query ? `?${query}` : ''}`);
 };

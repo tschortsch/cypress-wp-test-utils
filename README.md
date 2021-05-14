@@ -25,6 +25,23 @@ Inspired by the [`@wordpress/e2e-test-utils` package](https://www.npmjs.com/pack
 
 1. Use the commands in your tests!
 
+## Configuration
+
+There are several options to configure the commands. These options can be defined in your cypress configuration file (normally `cypress.json`):
+
+```json
+{
+  "baseUrl": "http://localhost:8889",
+  "env": {
+    "WP_USERNAME": "myuser",
+    "WP_PASSWORD": "supersecurepassword"
+  }
+}
+```
+
+* `WP_USERNAME`: Username which is used as the default username in the `loginUser` command.
+* `WP_PASSWORD`: Password which is used as the default password in the `loginUser` command.
+
 ## List of available commands
 
 ### activatePlugin
@@ -89,27 +106,152 @@ Deactivates a plugin.
 
 * `slug` (`string`) Slug of the plugin which should be deactivated.
 
-### Further commands
+### ensureSidebarOpened
 
-* ensureSidebarOpened()
-* getCheckboxByLabel(label: string)
-* getCurrentPostContent()
-* getEditedPostContent()
-* getInputByLabel(label: string)
-* getSelectByLabel(label: string)
-* getTextControlByLabel(label: string)
-* getToggleByLabel(label: string)
-* insertBlock(searchTerm: string, blockLabel?: string)
-* loginUser(username?: string, password?: string)
-* openGlobalBlockInserter()
-* openSidebarPanelWithTitle(title: string)
-* searchForBlock(searchTerm: string)
-* selectBlockByName(name: string, index?: number)
-* selectOptionIsAvailable(selectLabel: string, optionValue: string)
-* setPostContent(content: string)
-* setTextControlValueByLabel(label: string, value: string)
-* toolbarOptionIsActive(toolbarLabel: string, buttonText: string, toolbarIndex?: number, buttonIndex?: number)
-* visitAdminPage(adminPath: string, query?: string)
+Ensures that the sidebar is opened (opens sidebar if closed).
+
+### getCheckboxByLabel
+
+Gets a checkbox element by label.
+
+#### Parameters
+
+* `label` (`string`) Label of checkbox element.
+
+### getCurrentPostContent
+
+Returns current post content as object.
+see: [https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/#getCurrentPost](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/#getCurrentPost)
+
+### getEditedPostContent
+
+Returns the content of the post being edited as string.
+* see: [https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/#getEditedPostContent](https://developer.wordpress.org/block-editor/reference-guides/data/data-core-editor/#getEditedPostContent)
+
+### getInputByLabel
+
+Gets a input element by label.
+
+#### Parameters
+
+* `label` (`string`) Label of input element.
+
+### getSelectByLabel
+
+Gets a select element by label.
+
+#### Parameters
+
+* `label` (`string`) Label of select element.
+
+### getTextControlByLabel
+
+Gets a TextControl element by label.
+
+#### Parameters
+
+* `label` (`string`) Label of TextControl element.
+
+### getToggleByLabel
+
+Gets a toggle element by label.
+
+#### Parameters
+
+* `label` (`string`) Label of toggle element.
+
+### insertBlock
+
+Opens the inserter, searches for the given term, then selects the first result that appears.
+
+#### Parameters
+
+* `searchTerm` (`string`) The text to search the inserter for.
+* `blockLabel?` (`string`) The label of the block to insert.
+
+### loginUser
+
+Performs a login with specified username and password.
+
+#### Parameters
+
+* `username?` (`string`) Username which should be used. (Default: `Cypress.env('WP_USERNAME')`)
+* `password?` (`string`) Password which should be used. (Default: `Cypress.env('WP_PASSWORD')`)
+
+### openGlobalBlockInserter
+
+Opens the global block inserter.
+
+### openSidebarPanelWithTitle
+
+Opens sidebar panel with given title (if closed).
+
+#### Parameters
+
+* `title` (`string`) Title of sidebar panel to open.
+
+### searchForBlock
+
+Search for block in the global inserter.
+
+#### Parameters
+
+* `searchTerm` (`string`) The text to search the inserter for.
+
+### selectBlockByName
+
+Selects a block by its name.
+
+#### Parameters
+
+* `name` (`string`) Name of the block to select. (eg. `'core/paragraph'`)
+* `index?` (`number`) The index of the block if multiple blocks were found with the given name.
+
+### selectOptionIsAvailable
+
+Checks if a certain option in a select box is available.
+
+#### Parameters
+
+* `selectLabel` (`string`) Label of the select box.
+* `optionValue` (`string`) The value of the option to search for.
+
+### setPostContent
+
+Sets the editor content.
+
+#### Parameters
+
+* `content` (`string`) New editor content.
+
+### setTextControlValueByLabel
+
+Sets the value of a TextControl element by its label.
+
+#### Parameters
+
+* `label` (`string`) Label of the TextControl element.
+* `value` (`string`) Value to set.
+
+### toolbarOptionIsActive
+
+Checks if a toolbar option is active.
+
+#### Parameters
+
+* `toolbarLabel` (`string`) Label of the toolbar option to check.
+* `buttonText` (`string`) Text of the button to check if it's active.
+* `toolbarIndex?` (`number`) The index of the toolbar option if multiple options were found with the given label.
+* `buttonIndex?` (`number`) The index of the button if multiple buttons were found with the given text.
+
+### visitAdminPage
+
+Visits a given admin page.
+
+#### Parameters
+
+* `adminPath` (`string`) Path to admin page.
+* `query?` (`string`) Query string which should be added to URL.
 
 ## Compatibility
 
