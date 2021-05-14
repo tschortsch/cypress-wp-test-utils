@@ -4,7 +4,7 @@
  * @param {string} elementType The element type (eg. button, input).
  * @param {string} text The text of the element.
  * @param {boolean} [strict] If set to true the given text has to match exactly the text of the element.
- * @param {number} [index] The index of the button if multiple buttons were found with the given label.
+ * @param {number} [index] The index of the element if multiple elements were found with the given label.
  */
 export const clickElementByText = (
   elementType,

@@ -27,13 +27,70 @@ Inspired by the [`@wordpress/e2e-test-utils` package](https://www.npmjs.com/pack
 
 ## List of available commands
 
-* activatePlugin(slug: string)
-* clickBlockToolbarButton(label: string, index?: number)
-* clickButton(label: string, type?: BlockToolbarButtonType)
-* clickElementByText(elementType: string, text: string, strict?: boolean, index?: number)
-* closeWelcomeGuide()
-* createNewPost(createNewPostParams?: CreateNewPostParams)
-* deactivatePlugin(slug: string)
+### activatePlugin
+
+Activates a plugin.
+
+#### Parameters
+
+* `slug` (`string`) Slug of the plugin which should be activated.
+
+### clickBlockToolbarButton
+
+Clicks a button in the toolbar of the currently selected block.
+
+#### Parameters
+
+* `label` (`string`) The text string of the button label.
+* `index?` (`number`) The index of the button if multiple buttons were found with the given label. (Default: `0`)
+
+### clickButton
+
+Clicks a button.
+
+#### Parameters
+
+* `label` (`string`) The text string of the button label.
+* `buttonLabelType?` (`'ariaLabel' | 'content'`) The type of button label: 'ariaLabel' or 'content'. (Default: `'content'`)
+
+### clickElementByText
+
+Clicks an element by a given text.
+
+#### Parameters
+
+* `elementType` (`string`) The element type (eg. `'button'`, `'input'`).
+* `text` (`string`) The text of the element.
+* `strict?` (`boolean`) If set to true the given text has to match exactly the text of the element (Default: `false`).
+* `index?` (`number`) The index of the element if multiple elements were found with the given label. (Default: `0`)
+
+### closeWelcomeGuide
+
+Closes the welcome guide if displayed.
+
+### createNewPost
+
+Creates new post.
+
+#### Parameters
+
+* `object` (`object`) Object to create new post, along with tips enabling option.
+* `object.postType?` (`string`) Post type of the new post.
+* `object.title?` (`string`) Title of the new post.
+* `object.content?` (`string`) Content of the new post.
+* `object.excerpt?` (`string`) Excerpt of the new post.
+* `object.showWelcomeGuide?` (`boolean`) Whether to show the welcome guide or not. (Default: `false`)
+
+### deactivatePlugin
+
+Deactivates a plugin.
+
+#### Parameters
+
+* `slug` (`string`) Slug of the plugin which should be deactivated.
+
+### Further commands
+
 * ensureSidebarOpened()
 * getCheckboxByLabel(label: string)
 * getCurrentPostContent()
@@ -56,9 +113,12 @@ Inspired by the [`@wordpress/e2e-test-utils` package](https://www.npmjs.com/pack
 
 ## Compatibility
 
-Right now those commands are only compatible to WordPress 5.7.
-The goal is to support further WordPress versions.
-But since there are a lot of changes in the editor between WordPress versions it's difficult to support a lot of different versions at once.
+* WordPress 5.7.x
+* Node >=12
+* Cypress >=4.x
+
+Right now those commands are only compatible with WordPress 5.7.
+The goal is to support further WordPress versions but since there are always a lot of changes in the editor between WordPress versions it's difficult to support all of them.
 
 ## cypress-xpath included
 

@@ -1,15 +1,5 @@
 /// <reference types="cypress" />
 
-interface CreateNewPostParams {
-  postType?: string;
-  title?: string;
-  content?: string;
-  excerpt?: string;
-  showWelcomeGuide?: boolean;
-}
-
-type BlockToolbarButtonType = 'ariaLabel' | 'content';
-
 declare namespace Cypress {
   interface Chainable<Subject> {
     /**
@@ -32,7 +22,7 @@ declare namespace Cypress {
      * @example cy.clickButton('Click me');
      * @example cy.clickButton('Click me', 'ariaLabel');
      */
-    clickButton(label: string, buttonLabelType?: BlockToolbarButtonType): Chainable<void>
+    clickButton(label: string, buttonLabelType?: 'ariaLabel' | 'content'): Chainable<void>
 
     /**
      * Clicks an element by a given text.
@@ -50,7 +40,7 @@ declare namespace Cypress {
      * Creates new post.
      * @example cy.createNewPost();
      */
-    createNewPost(createNewPostParams?: CreateNewPostParams): Chainable<void>
+    createNewPost(createNewPostParams?: object): Chainable<void>
 
     /**
      * Deactivates a plugin.
