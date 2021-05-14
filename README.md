@@ -258,7 +258,7 @@ Visits a given admin page.
 
 * WordPress 5.7.x
 * Node >=12
-* Cypress >=4.x
+* Cypress >=5.x
 
 Right now those commands are only compatible with WordPress 5.7.
 The goal is to support further WordPress versions but since there are always a lot of changes in the editor between WordPress versions it's difficult to support all of them.
