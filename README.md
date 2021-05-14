@@ -1,5 +1,7 @@
 # Cypress test utilities for WordPress
 
+[![Build Status](https://github.com/tschortsch/cypress-wp-test-utils/workflows/Lint%20Test%20Deploy/badge.svg?branch=master)](https://github.com/tschortsch/cypress-wp-test-utils/actions?query=workflow%3A%22Lint+Test+Deploy%22+branch%3Amaster)
+
 Collection of [cypress](https://www.cypress.io/) commands to test your WordPress page. 
 Inspired by the [`@wordpress/e2e-test-utils` package](https://www.npmjs.com/package/@wordpress/e2e-test-utils) which does the same for Puppeteer.
 
