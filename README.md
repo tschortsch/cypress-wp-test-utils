@@ -31,16 +31,17 @@ There are several options to configure the commands. These options can be define
 
 ```json
 {
-  "baseUrl": "http://localhost:8889",
   "env": {
-    "WP_USERNAME": "myuser",
-    "WP_PASSWORD": "supersecurepassword"
+    "cypress-wp-test-utils": {
+      "username": "myuser",
+      "password": "supersecurepassword"
+    }
   }
 }
 ```
 
-* `WP_USERNAME`: Username which is used as the default username in the `loginUser` command.
-* `WP_PASSWORD`: Password which is used as the default password in the `loginUser` command.
+* `cypress-wp-test-utils.username`: Username which is used as the default username in the `loginUser` command.
+* `cypress-wp-test-utils.password`: Password which is used as the default password in the `loginUser` command.
 
 ## List of available commands
 
