@@ -40,8 +40,8 @@ There are several options to configure the commands. These options can be define
 }
 ```
 
-* `cypress-wp-test-utils.username`: Username which is used as the default username in the `loginUser` command.
-* `cypress-wp-test-utils.password`: Password which is used as the default password in the `loginUser` command.
+* `username`: Username which is used as the default username in the `loginUser` command.
+* `password`: Password which is used as the default password in the `loginUser` command.
 
 ## List of available commands
 
@@ -176,8 +176,8 @@ Performs a login with specified username and password.
 
 #### Parameters
 
-* `username?` (`string`) Username which should be used. (Default: `Cypress.env('WP_USERNAME')`)
-* `password?` (`string`) Password which should be used. (Default: `Cypress.env('WP_PASSWORD')`)
+* `username?` (`string`) Username which should be used. (Default: `admin`)
+* `password?` (`string`) Password which should be used. (Default: `password`)
 
 ### openGlobalBlockInserter
 
