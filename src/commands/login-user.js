@@ -2,7 +2,7 @@ import { WP_USERNAME, WP_PASSWORD } from '../shared/config';
 import { createURL } from '../shared/create-url';
 
 /**
- * Performs log in with specified username and password.
+ * Performs a login with specified username and password.
  *
  * @param {?string} username String to be used as user credential.
  * @param {?string} password String to be used as user credential.

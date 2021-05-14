@@ -1,5 +1,5 @@
 /**
- * Search for block in the global inserter
+ * Search for block in the global inserter.
  *
  * @param {string} searchTerm The text to search the inserter for.
  */

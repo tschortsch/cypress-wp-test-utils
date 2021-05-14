@@ -1,5 +1,5 @@
 /**
- * Sets the editor content
+ * Sets the editor content.
  *
  * @param {string} content New editor content.
  */

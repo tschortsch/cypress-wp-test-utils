@@ -1,5 +1,5 @@
 /**
- * Clicks on an element by a given text.
+ * Clicks an element by a given text.
  *
  * @param {string} elementType The element type (eg. button, input).
  * @param {string} text The text of the element.
