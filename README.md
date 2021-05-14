@@ -1,11 +1,11 @@
 # Cypress test utilities for WordPress
 
-Collection of [cypress](https://www.cypress.io/) commands to test WordPress. 
-Inspired by the [`@wordpress/e2e-test-utils` package](https://www.npmjs.com/package/@wordpress/e2e-test-utils).
+Collection of [cypress](https://www.cypress.io/) commands to test your WordPress page. 
+Inspired by the [`@wordpress/e2e-test-utils` package](https://www.npmjs.com/package/@wordpress/e2e-test-utils) which does the same for Puppeteer.
 
 ## Installation
 
-1. Install NPM dependency
+1. Install npm dependency
 
    ```shell
    # NPM
@@ -15,7 +15,7 @@ Inspired by the [`@wordpress/e2e-test-utils` package](https://www.npmjs.com/pack
    yarn add cypress-wp-test-utils --dev
    ```
 
-1. Register commands in your cypress project (`cypress/support/index.js`)
+1. Register commands in your cypress project (normally in `cypress/support/index.js`)
 
    ```javascript
    import { registerWpTestCommands } from 'cypress-wp-test-utils';
@@ -23,12 +23,7 @@ Inspired by the [`@wordpress/e2e-test-utils` package](https://www.npmjs.com/pack
    registerWpTestCommands();
    ```
 
-1. Use commands in your tests!
-
-## cypress-xpath included
-
-This package uses and includes the [cypress-xpath](https://www.npmjs.com/package/cypress-xpath) command.
-If you're using it as well in your tests you don't need to include it again.
+1. Use the commands in your tests!
 
 ## List of available commands
 
@@ -61,4 +56,11 @@ If you're using it as well in your tests you don't need to include it again.
 
 ## Compatibility
 
-* Compatible with WordPress 5.7
+Right now those commands are only compatible to WordPress 5.7.
+The goal is to support further WordPress versions.
+But since there are a lot of changes in the editor between WordPress versions it's difficult to support a lot of different versions at once.
+
+## cypress-xpath included
+
+This package uses and includes the [cypress-xpath](https://www.npmjs.com/package/cypress-xpath) command.
+If you're using it as well in your tests you don't need to include it again.
