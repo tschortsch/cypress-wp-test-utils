@@ -27,6 +27,8 @@ import { setTextControlValueByLabel } from './commands/set-text-control-value-by
 import { toolbarOptionIsActive } from './commands/toolbar-option-is-active';
 import { visitAdminPage } from './commands/visit-admin-page';
 
+export * from './shared/helper';
+
 export const registerWpTestCommands = () => {
   Cypress.Commands.add('activatePlugin', activatePlugin);
   Cypress.Commands.add('clickBlockToolbarButton', clickBlockToolbarButton);

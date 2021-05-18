@@ -174,4 +174,27 @@ declare namespace Cypress {
   }
 }
 
+/**
+ * Registers WordPress test commands for cypress.
+ */
 export declare function registerWpTestCommands(): void;
+
+/**
+ * Runs a selector function on the given store and returns the result.
+ */
+export declare function wpDataSelect(store: string, selector: string, ...parameters): Cypress.Chainable<unknown>;
+
+/**
+ * Returns all blocks which are currently in the editor.
+ */
+export declare function getAllBlocks(): Cypress.Chainable<unknown>;
+
+/**
+ * Returns a block in the editor by its name.
+ */
+export declare function getBlockByName(): Cypress.Chainable<unknown>;
+
+/**
+ * Selects a block in the editor by its client id.
+ */
+export declare function selectBlockByClientId(): Cypress.Chainable<void>;
