@@ -1,6 +1,15 @@
 /// <reference types="cypress" />
 
+export interface CypressWpTestUtilsEnv {
+  username?: string;
+  password?: string;
+}
+
 declare namespace Cypress {
+  interface Cypress {
+    env(key: 'cypress-wp-test-utils'): CypressWpTestUtilsEnv | undefined;
+  }
+
   interface Chainable<Subject> {
     /**
      * Activates a plugin.
