@@ -29,7 +29,7 @@ import { visitAdminPage } from './commands/visit-admin-page';
 
 export * from './shared/helper';
 
-export const registerWpTestCommands = () => {
+export const registerWpTestCommands = (): void => {
   Cypress.Commands.add('activatePlugin', activatePlugin);
   Cypress.Commands.add('clickBlockToolbarButton', clickBlockToolbarButton);
   Cypress.Commands.add('clickButton', clickButton);

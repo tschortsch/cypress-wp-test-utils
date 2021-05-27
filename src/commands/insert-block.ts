@@ -5,7 +5,10 @@
  * @param {string} searchTerm The text to search the inserter for.
  * @param {string} [blockLabel] The label of the block to insert.
  */
-export const insertBlock = (searchTerm, blockLabel = searchTerm) => {
+export const insertBlock = (
+  searchTerm: string,
+  blockLabel = searchTerm
+): void => {
   cy.searchForBlock(searchTerm);
   cy.xpath(`//button//span[contains(text(), '${blockLabel}')]`).click({
     force: true,

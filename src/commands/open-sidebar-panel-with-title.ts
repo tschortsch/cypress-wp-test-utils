@@ -3,7 +3,7 @@
  *
  * @param {string} title Title of sidebar panel to open.
  */
-export const openSidebarPanelWithTitle = (title) => {
+export const openSidebarPanelWithTitle = (title: string): void => {
   cy.ensureSidebarOpened();
 
   // Check if sidebar panel exists

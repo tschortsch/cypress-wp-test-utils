@@ -3,7 +3,7 @@
  *
  * @param {string} content New editor content.
  */
-export const setPostContent = (content) => {
+export const setPostContent = (content: string): void => {
   // TODO: We have to insert at least one block before setting the post content
   cy.insertBlock('Paragraph');
   cy.window().then((window) => {

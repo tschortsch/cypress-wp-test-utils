@@ -3,8 +3,10 @@
  *
  * @param {string} label Label of toggle element.
  */
-export const getToggleByLabel = (label) => {
-  cy.xpath(
+import Chainable = Cypress.Chainable;
+
+export const getToggleByLabel = (label: string): Chainable<JQuery> => {
+  return cy.xpath(
     `//label[contains(@class,"components-toggle-control__label")][contains(text(),"${label}")]/preceding-sibling::span[contains(@class,"components-form-toggle")]/input`
   );
 };

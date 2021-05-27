@@ -1,2 +1,3 @@
 /node_modules
 /cypress/fixtures/example.json
+dist/

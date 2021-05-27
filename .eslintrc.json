@@ -1,18 +1,9 @@
 {
+  "root": true,
+  "parser": "@typescript-eslint/parser",
   "extends": [
-    "plugin:prettier/recommended",
-    "plugin:cypress/recommended"
-  ],
-  "plugins": [
-    "prettier",
-    "cypress"
-  ],
-  "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true
-      }
-    ]
-  }
+    "plugin:cypress/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ]
 }

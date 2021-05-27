@@ -7,11 +7,11 @@
  * @param {number} [buttonIndex] The index of the button if multiple buttons were found with the given text.
  */
 export const toolbarOptionIsActive = (
-  toolbarLabel,
-  buttonText,
+  toolbarLabel: string,
+  buttonText: string,
   toolbarIndex = 0,
   buttonIndex = 0
-) => {
+): void => {
   cy.clickBlockToolbarButton(toolbarLabel, toolbarIndex);
   cy.xpath(
     `//button[contains(text(),"${buttonText}") and contains(@class,"is-active")]`

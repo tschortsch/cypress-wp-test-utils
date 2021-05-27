@@ -1,4 +1,6 @@
-const DEFAULT_CONFIG = {
+import { CypressWpTestUtilsEnv } from '../types';
+
+const DEFAULT_CONFIG: CypressWpTestUtilsEnv = {
   username: 'admin',
   password: 'password',
 };

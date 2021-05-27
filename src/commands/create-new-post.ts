@@ -1,4 +1,5 @@
 import { addQueryArgs } from '@wordpress/url';
+import { NewPostOptions } from '../types';
 
 /**
  * Creates new post.
@@ -16,7 +17,7 @@ export const createNewPost = ({
   content,
   excerpt,
   showWelcomeGuide = false,
-} = {}) => {
+}: NewPostOptions = {}): void => {
   const query = addQueryArgs('', {
     post_type: postType,
     post_title: title,

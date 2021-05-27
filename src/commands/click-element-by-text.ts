@@ -7,11 +7,11 @@
  * @param {number} [index] The index of the element if multiple elements were found with the given label.
  */
 export const clickElementByText = (
-  elementType,
-  text,
+  elementType: string,
+  text: string,
   strict = false,
   index = 0
-) => {
+): void => {
   if (strict) {
     cy.xpath(`//${elementType}[text()="${text}"]`)
       .eq(index)

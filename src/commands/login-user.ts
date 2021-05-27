@@ -9,7 +9,7 @@ import config from '../shared/config';
 export const loginUser = (
   username = config.username,
   password = config.password
-) => {
+): void => {
   cy.visit('wp-login.php');
 
   // somehow we need to wait for some time before entering the credentials

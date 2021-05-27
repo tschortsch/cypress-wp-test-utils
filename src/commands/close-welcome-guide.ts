@@ -1,7 +1,7 @@
 /**
  * Closes the welcome guide if displayed.
  */
-export const closeWelcomeGuide = () => {
+export const closeWelcomeGuide = (): void => {
   cy.window().then((window) => {
     const isWelcomeGuideActive = window.wp.data
       .select('core/edit-post')
