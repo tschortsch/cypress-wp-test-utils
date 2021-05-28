@@ -3,7 +3,7 @@ import Chainable = Cypress.Chainable;
 export const wpDataSelect = (
   store: string,
   selector: string,
-  ...parameters
+  ...parameters: any[]
 ): Chainable<unknown> => {
   return cy.window().then((window) => {
     return window.wp.data.select(store)[selector](...parameters);
