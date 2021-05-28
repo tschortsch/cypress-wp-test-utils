@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         node: [ '12', '14', '16' ]
-        cypress: [ '5.6.0', '6.9.1', '7.3.0' ]
+        cypress: [ '5.6.0', '6.9.1', '7.4.0' ]
 
     steps:
       - uses: actions/checkout@v2
