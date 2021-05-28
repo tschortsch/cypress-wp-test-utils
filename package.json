@@ -52,7 +52,8 @@
     "build": "tsc"
   },
   "files": [
-    "src"
+    "src/types.d.ts",
+    "dist"
   ],
   "engines": {
     "node": "12.x || 14.x || 16.x"
