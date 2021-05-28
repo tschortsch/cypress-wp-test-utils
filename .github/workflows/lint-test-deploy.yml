@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         node: [ '12', '14', '16' ]
-        cypress: [ '5.6.0', '6.9.1', '7.3.0' ]
+        cypress: [ '5.6.0', '6.9.1', '7.4.0' ]
 
     steps:
       - uses: actions/checkout@v2
@@ -29,6 +29,31 @@ jobs:
           npm run wp-env start
       - name: Run E2E tests
         run: npm run test:e2e
+
+  deploy-dry-run:
+    name: '[DRY RUN] Publish package'
+
+    # only run on master but not tags
+    if: ${{ github.ref == 'refs/heads/master' && !startsWith(github.ref, 'refs/tags/') }}
+
+    needs: [ test ]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: '[DRY RUN] Publish package to npm registry'
+        run: npm publish --dry-run
 
   deploy:
     name: Publish package
