@@ -1,6 +1,6 @@
 {
   "name": "cypress-wp-test-utils",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Cypress test utilities for WordPress",
   "author": "Juerg Hunziker <juerg.hunziker@gmail.com>",
   "license": "GPL-2.0-or-later",
@@ -21,28 +21,29 @@
   "main": "dist/index.js",
   "types": "src/types.d.ts",
   "dependencies": {
-    "@wordpress/url": "^3.1.0",
+    "@wordpress/url": "^3.2.0",
     "cypress-xpath": "^1.6.2",
     "path-browserify": "^1.0.1"
   },
   "devDependencies": {
     "@cypress/snapshot": "^2.1.7",
-    "@types/node": "^15.6.1",
-    "@typescript-eslint/eslint-plugin": "^4.25.0",
-    "@typescript-eslint/parser": "^4.25.0",
-    "@wordpress/env": "^4.0.4",
-    "cypress": "^7.4.0",
-    "eslint": "^7.27.0",
+    "@types/node": "^16.4.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
+    "@wordpress/env": "^4.1.0",
+    "cypress": "^8.0.0",
+    "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.3.0",
-    "typescript": "^4.3.2"
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
   },
   "peerDependencies": {
-    "cypress": "5.x || 6.x || 7.x"
+    "cypress": "5.x || 6.x || 7.x || 8.x"
   },
   "scripts": {
+    "dev": "tsc --watch",
     "test:e2e": "npm run cy:run",
     "cy:open": "cypress open",
     "cy:run": "cypress run",

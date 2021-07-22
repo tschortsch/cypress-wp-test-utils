@@ -9,6 +9,7 @@ context('getTextControlByLabel Command', () => {
   it('should return text control element by label', () => {
     cy.insertBlock('Buttons');
     cy.ensureSidebarOpened();
+    cy.openSidebarPanelWithTitle('Advanced');
     cy.getTextControlByLabel('Link rel').should('have.value', '');
   });
 });

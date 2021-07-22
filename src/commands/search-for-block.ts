@@ -5,5 +5,5 @@
  */
 export const searchForBlock = (searchTerm: string): void => {
   cy.openGlobalBlockInserter();
-  cy.get('input.block-editor-inserter__search-input').type(searchTerm);
+  cy.get('input.block-editor-inserter__search-input').clear().type(searchTerm);
 };
