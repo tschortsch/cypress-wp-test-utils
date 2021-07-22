@@ -8,9 +8,11 @@ context('loginUser Command', () => {
   });
 
   it('should login user with different username and password', () => {
-    cy.loginUser('otheruser', 'otherpass');
+    const username = 'otheruser';
+    const password = 'otherpass';
+    cy.loginUser(username, password);
     cy.get('#login_error').contains(
-      'Unknown username. Check again or try your email address.'
+      `Error: The username ${username} is not registered on this site. If you are unsure of your username, try your email address instead.`
     );
   });
 });

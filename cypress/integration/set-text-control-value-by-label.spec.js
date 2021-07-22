@@ -7,9 +7,10 @@ context('setTextControlValueByLabel Command', () => {
   });
 
   it('should set text control value by label', () => {
-    cy.insertBlock('Buttons');
+    cy.insertBlock('Paragraph');
     cy.ensureSidebarOpened();
-    cy.setTextControlValueByLabel('Link rel', 'my rel');
+    cy.openSidebarPanelWithTitle('Advanced');
+    cy.setTextControlValueByLabel('Additional CSS class(es)', 'my rel');
     cy.getEditedPostContent().snapshot();
   });
 });

@@ -9,8 +9,7 @@ context('clickButton Command', () => {
   it('should click on button by content', () => {
     cy.insertBlock('Heading');
     cy.selectBlockByName('core/heading');
-    cy.clickBlockToolbarButton('Options');
-    cy.clickButton('Copy', 'content');
+    cy.clickButton('Save draft', 'content');
     cy.getEditedPostContent().snapshot();
   });
 

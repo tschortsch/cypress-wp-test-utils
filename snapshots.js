@@ -1,5 +1,5 @@
 module.exports = {
-  "__version": "7.3.0",
+  "__version": "7.4.0",
   "Actions": {
     "example test": {
       "1": "<!-- wp:heading -->\n<h2></h2>\n<!-- /wp:heading -->"
@@ -25,7 +25,7 @@ module.exports = {
   },
   "setTextControlValueByLabel Command": {
     "should set text control value by label": {
-      "1": "<!-- wp:buttons -->\n<div class=\"wp-block-buttons\"><!-- wp:button -->\n<div class=\"wp-block-button\"><a class=\"wp-block-button__link\" rel=\"my rel\"></a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons -->"
+      "1": "<!-- wp:paragraph {\"className\":\"my rel\"} -->\n<p class=\"my rel\"></p>\n<!-- /wp:paragraph -->"
     }
   },
   "getEditedPostContent Command": {

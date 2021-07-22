@@ -12,13 +12,13 @@ context('selectBlockByName Command', () => {
 
     // Select first heading block
     cy.selectBlockByName('core/heading', 0);
-    cy.get('[data-type="core/heading"]')
+    cy.get('.edit-post-visual-editor [data-type="core/heading"]')
       .eq(0)
       .should('have.class', 'is-selected');
 
     // Select second heading block
     cy.selectBlockByName('core/heading', 1);
-    cy.get('[data-type="core/heading"]')
+    cy.get('.edit-post-visual-editor [data-type="core/heading"]')
       .eq(1)
       .should('have.class', 'is-selected');
   });
