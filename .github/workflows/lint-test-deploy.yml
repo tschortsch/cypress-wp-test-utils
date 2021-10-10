@@ -11,7 +11,8 @@ jobs:
     strategy:
       matrix:
         node: [ '12', '14', '16' ]
-        cypress: [ '5.6.0', '6.9.1', '7.7.0', '8.0.0' ]
+        cypress: [ '5.6.0', '6.9.1', '7.7.0', '8.5.0' ]
+        wp: [ '5.7', '5.8' ]
 
     steps:
       - uses: actions/checkout@v2
@@ -23,12 +24,15 @@ jobs:
         run: CYPRESS_INSTALL_BINARY=${{ matrix.cypress }} npm ci
       - name: Lint
         run: npm run lint
+      - name: "Configure environment with WP ${{ matrix.wp }}"
+        run: |
+          echo -e '{\n\t"core": "WordPress/WordPress#${{ matrix.wp }}"\n}' > ./.wp-env.override.json
       - name: Start WordPress environment
         run: |
           chmod -R 767 ./ # TODO: Possibly integrate in wp-env
           npm run wp-env start
       - name: Run E2E tests
-        run: npm run test:e2e
+        run: npm run test:e2e -- --config '{"env":{"cypress-wp-test-utils":{"wpVersion":${{ matrix.wp }}}}}'
 
   deploy-dry-run:
     name: '[DRY RUN] Publish package'

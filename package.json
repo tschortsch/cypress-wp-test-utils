@@ -1,6 +1,6 @@
 {
   "name": "cypress-wp-test-utils",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Cypress test utilities for WordPress",
   "author": "Juerg Hunziker <juerg.hunziker@gmail.com>",
   "license": "GPL-2.0-or-later",
@@ -31,7 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
     "@wordpress/env": "^4.1.0",
-    "cypress": "^8.0.0",
+    "cypress": "^8.5.0",
     "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-cypress": "^2.11.3",
