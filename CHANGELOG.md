@@ -2,8 +2,8 @@
 
 ## 0.4.0
 
-* [Fix] Always click on first matching element in insertBlock command.
-* [Fix] Fix openGlobalBlockInserter command when used with WordPress 5.7.
+* [Fix] Always click on first matching element in `insertBlock` command.
+* [Fix] Fix `openGlobalBlockInserter` command when used with WordPress 5.7.
 
 ## 0.3.0
 
