@@ -7,8 +7,10 @@ context('getToggleByLabel Command', () => {
   });
 
   it('should return toggle element by label', () => {
-    cy.insertBlock('Post Date');
-    cy.ensureSidebarOpened();
-    cy.getToggleByLabel('Link to post').should('exist').and('not.be.checked');
+    cy.insertBlock('Buttons');
+    cy.clickBlockToolbarButton('Link');
+    cy.getToggleByLabel('Open in new tab')
+      .should('exist')
+      .and('not.be.checked');
   });
 });

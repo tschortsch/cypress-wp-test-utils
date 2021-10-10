@@ -11,8 +11,6 @@ context('loginUser Command', () => {
     const username = 'otheruser';
     const password = 'otherpass';
     cy.loginUser(username, password);
-    cy.get('#login_error').contains(
-      `Error: The username ${username} is not registered on this site. If you are unsure of your username, try your email address instead.`
-    );
+    cy.get('#login_error').should('exist');
   });
 });
