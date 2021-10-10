@@ -7,7 +7,7 @@
  */
 export const insertBlock = (searchTerm, blockLabel = searchTerm) => {
     cy.searchForBlock(searchTerm);
-    cy.xpath(`//button//span[contains(text(), '${blockLabel}')]`).click({
+    cy.xpath(`//button//span[contains(text(), '${blockLabel}')]`).first().click({
         force: true,
     });
 };
