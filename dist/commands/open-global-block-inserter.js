@@ -1,17 +1,18 @@
 import config from '../shared/config';
-const GLOBAL_BLOCK_INSERTER_SELECTOR_57 = '.edit-post-header [aria-label="Add block"]';
-const GLOBAL_BLOCK_INSERTER_SELECTOR_58 = '.edit-post-header [aria-label="Toggle block inserter"]';
 /**
  * Opens the global block inserter.
  */
 export const openGlobalBlockInserter = () => {
-    const selector = config.wpVersion === 5.8
-        ? GLOBAL_BLOCK_INSERTER_SELECTOR_58
-        : GLOBAL_BLOCK_INSERTER_SELECTOR_57;
+    const toggleBlockInserterButtonSelector = config.wpVersion === 5.8
+        ? '.edit-post-header [aria-label="Toggle block inserter"]'
+        : '.edit-post-header [aria-label="Add block"]';
+    const inserterPanelSelector = config.wpVersion === 5.8
+        ? '.edit-post-editor__inserter-panel'
+        : '.edit-post-layout__inserter-panel';
     cy.window().then((window) => {
-        const isGlobalBlockInserterOpen = window.document.querySelector(selector);
+        const isGlobalBlockInserterOpen = window.document.querySelector(inserterPanelSelector);
         if (!isGlobalBlockInserterOpen) {
-            cy.get(selector).click({
+            cy.get(toggleBlockInserterButtonSelector).click({
                 force: true,
             });
         }
