@@ -52,7 +52,7 @@ jobs:
     name: '[DRY RUN] Publish package'
 
     # run always but not on tags
-    if: !(startsWith(github.ref, 'refs/tags/'))
+    if: startsWith(github.ref, 'refs/tags/') != true
 
     needs: [ lint, test ]
 
