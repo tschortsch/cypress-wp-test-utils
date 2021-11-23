@@ -1,3 +1,5 @@
+import Chainable = Cypress.Chainable;
+
 /**
  * Clicks an element by a given text.
  *
@@ -6,8 +8,6 @@
  * @param {boolean} [strict] If set to true the given text has to match exactly the text of the element.
  * @param {number} [index] The index of the element if multiple elements were found with the given label.
  */
-import Chainable = Cypress.Chainable;
-
 export const clickElementByText = (
   elementType: string,
   text: string,
