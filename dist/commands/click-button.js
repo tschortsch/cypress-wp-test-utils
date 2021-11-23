@@ -6,10 +6,10 @@
  */
 export const clickButton = (label, buttonLabelType = 'content') => {
     if (buttonLabelType === 'ariaLabel') {
-        cy.get(`button[aria-label="${label}"]`).click({ force: true });
+        return cy.get(`button[aria-label="${label}"]`).click({ force: true });
     }
     if (buttonLabelType === 'content') {
-        cy.xpath(`//button[contains(text(), '${label}')]`).click({
+        return cy.xpath(`//button[contains(text(), '${label}')]`).click({
             force: true,
         });
     }

@@ -8,12 +8,14 @@
  */
 export const clickElementByText = (elementType, text, strict = false, index = 0) => {
     if (strict) {
-        cy.xpath(`//${elementType}[text()="${text}"]`)
+        return cy
+            .xpath(`//${elementType}[text()="${text}"]`)
             .eq(index)
             .click({ force: true });
     }
     else {
-        cy.xpath(`//${elementType}[contains(text(),"${text}")]`)
+        return cy
+            .xpath(`//${elementType}[contains(text(),"${text}")]`)
             .eq(index)
             .click({ force: true });
     }

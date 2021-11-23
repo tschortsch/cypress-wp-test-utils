@@ -1,3 +1,5 @@
+import Chainable = Cypress.Chainable;
+
 /**
  * Clicks a button.
  *
@@ -7,13 +9,13 @@
 export const clickButton = (
   label: string,
   buttonLabelType: 'ariaLabel' | 'content' = 'content'
-): void => {
+): Chainable<JQuery> => {
   if (buttonLabelType === 'ariaLabel') {
-    cy.get(`button[aria-label="${label}"]`).click({ force: true });
+    return cy.get(`button[aria-label="${label}"]`).click({ force: true });
   }
 
   if (buttonLabelType === 'content') {
-    cy.xpath(`//button[contains(text(), '${label}')]`).click({
+    return cy.xpath(`//button[contains(text(), '${label}')]`).click({
       force: true,
     });
   }

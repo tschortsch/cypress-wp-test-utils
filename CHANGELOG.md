@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.5.0
+
+* [Feature] Add support for cypress 9.x.
+* [Fix] Return types of some commands.
+
 ## 0.4.0
 
 * [Fix] Always click on first matching element in `insertBlock` command.

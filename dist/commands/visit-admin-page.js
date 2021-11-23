@@ -6,5 +6,5 @@ import { join } from 'path';
  * @param {string} [query] Query string which should be added to URL.
  */
 export const visitAdminPage = (adminPath, query) => {
-    cy.visit(`${join('/wp-admin', adminPath)}${query ? `?${query}` : ''}`);
+    return cy.visit(`${join('/wp-admin', adminPath)}${query ? `?${query}` : ''}`);
 };

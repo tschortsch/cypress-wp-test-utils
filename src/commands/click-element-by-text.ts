@@ -1,3 +1,5 @@
+import Chainable = Cypress.Chainable;
+
 /**
  * Clicks an element by a given text.
  *
@@ -11,13 +13,15 @@ export const clickElementByText = (
   text: string,
   strict = false,
   index = 0
-): void => {
+): Chainable<JQuery> => {
   if (strict) {
-    cy.xpath(`//${elementType}[text()="${text}"]`)
+    return cy
+      .xpath(`//${elementType}[text()="${text}"]`)
       .eq(index)
       .click({ force: true });
   } else {
-    cy.xpath(`//${elementType}[contains(text(),"${text}")]`)
+    return cy
+      .xpath(`//${elementType}[contains(text(),"${text}")]`)
       .eq(index)
       .click({ force: true });
   }
