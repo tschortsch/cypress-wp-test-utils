@@ -48,6 +48,34 @@ jobs:
       - name: Run E2E tests
         run: npm run test:e2e -- --config '{"env":{"cypress-wp-test-utils":{"wpVersion":${{ matrix.wp }}}}}'
 
+  test-wp-59:
+    name: Test WordPress 5.9
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [ '12', '14', '16' ]
+        cypress: [ '5.6.0', '6.9.1', '7.7.0', '8.7.0', '9.1.0' ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install dependencies
+        run: CYPRESS_INSTALL_BINARY=${{ matrix.cypress }} npm ci
+      - name: "Configure environment with WP 5.9"
+        run: |
+          echo -e '{\n\t"core": "https://wordpress.org/wordpress-5.9-beta1.zip"\n}' > ./.wp-env.override.json
+      - name: Start WordPress environment
+        run: |
+          chmod -R 767 ./ # TODO: Possibly integrate in wp-env
+          npm run wp-env start
+      - name: Run E2E tests
+        run: npm run test:e2e -- --config '{"env":{"cypress-wp-test-utils":{"wpVersion":5.9}}}'
+
   deploy-dry-run:
     name: '[DRY RUN] Publish package'
 
