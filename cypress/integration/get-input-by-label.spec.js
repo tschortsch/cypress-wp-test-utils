@@ -1,5 +1,7 @@
 /// <reference types="Cypress" />
 
+import config from '../../dist/shared/config';
+
 context('getInputByLabel Command', () => {
   beforeEach(() => {
     cy.loginUser();
@@ -9,6 +11,9 @@ context('getInputByLabel Command', () => {
   it('should return input field by label', () => {
     cy.insertBlock('Paragraph');
     cy.ensureSidebarOpened();
+    if (config.wpVersion >= 5.9) {
+      cy.clickButton('Set custom size', 'ariaLabel');
+    }
     cy.getInputByLabel('Custom').should('exist');
   });
 });

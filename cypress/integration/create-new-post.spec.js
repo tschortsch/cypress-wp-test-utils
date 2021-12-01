@@ -1,4 +1,5 @@
 /// <reference types="Cypress" />
+import config from '../../dist/shared/config';
 
 context('createNewPost Command', () => {
   beforeEach(() => {
@@ -7,7 +8,13 @@ context('createNewPost Command', () => {
 
   it('should create new post', () => {
     cy.createNewPost();
-    cy.get('.editor-post-title__input').should('be.empty');
+    if (config.wpVersion >= 5.9) {
+      cy.get('.editor-post-title__input').within(() => {
+        cy.get('[data-rich-text-placeholder="Add title"]');
+      });
+    } else {
+      cy.get('.editor-post-title__input').should('be.empty');
+    }
   });
 
   it('should create new post with options', () => {
