@@ -25,6 +25,7 @@ import { setPostContent } from './commands/set-post-content';
 import { setTextControlValueByLabel } from './commands/set-text-control-value-by-label';
 import { toolbarOptionIsActive } from './commands/toolbar-option-is-active';
 import { visitAdminPage } from './commands/visit-admin-page';
+export * from './shared/config';
 export * from './shared/helper';
 export const registerWpTestCommands = () => {
     Cypress.Commands.add('activatePlugin', activatePlugin);

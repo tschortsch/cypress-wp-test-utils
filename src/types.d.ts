@@ -232,3 +232,8 @@ export declare function getBlockByName(): Cypress.Chainable<unknown>;
  * Selects a block in the editor by its client id.
  */
 export declare function selectBlockByClientId(): Cypress.Chainable<void>;
+
+/**
+ * Plugin configuration with applied default values
+ */
+export const config: CypressWpTestUtilsEnv;

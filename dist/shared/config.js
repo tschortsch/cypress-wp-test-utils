@@ -3,7 +3,8 @@ const DEFAULT_CONFIG = {
     password: 'password',
     wpVersion: 5.8,
 };
-export default {
+export const config = {
     ...DEFAULT_CONFIG,
     ...Cypress.env('cypress-wp-test-utils'),
 };
+export default config;

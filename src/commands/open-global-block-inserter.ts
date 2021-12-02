@@ -5,12 +5,12 @@ import config from '../shared/config';
  */
 export const openGlobalBlockInserter = (): void => {
   const toggleBlockInserterButtonSelector =
-    config.wpVersion === 5.8
+    config.wpVersion >= 5.8
       ? '.edit-post-header [aria-label="Toggle block inserter"]'
       : '.edit-post-header [aria-label="Add block"]';
 
   const inserterPanelSelector =
-    config.wpVersion === 5.8
+    config.wpVersion >= 5.8
       ? '.edit-post-editor__inserter-panel'
       : '.edit-post-layout__inserter-panel';
 
