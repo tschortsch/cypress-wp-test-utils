@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-import config from '../../dist/shared/config';
+import { config } from '../../dist';
 
 context('getInputByLabel Command', () => {
   beforeEach(() => {

@@ -6,7 +6,9 @@ const DEFAULT_CONFIG: CypressWpTestUtilsEnv = {
   wpVersion: 5.8,
 };
 
-export default {
+export const config: CypressWpTestUtilsEnv = {
   ...DEFAULT_CONFIG,
   ...Cypress.env('cypress-wp-test-utils'),
 };
+
+export default config;
