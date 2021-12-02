@@ -2,8 +2,8 @@
 
 ## 0.6.0
 
-* [Compatibility] Compatibilty with WordPress 5.9.
-* [Feature] `wpVersion` config option now supports value `5.9`. Since WordPress 5.9 is still in beta phase the default value for this option remains at `5.8`.
+* [Compatibility] Compatibility with WordPress 5.9.
+* [Feature] `wpVersion` config option now accepts `5.9` as valid value. Since WordPress 5.9 is still in beta phase the default value for this option remains at `5.8`.
 * [Feature] Export `config` object with applied default values so that it can be reused in own tests.
 * [Fix] Fix `openGlobalBlockInserter` and `searchForBlock` commands when used with WordPress 5.9.
 
