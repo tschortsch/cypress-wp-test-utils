@@ -45,7 +45,7 @@ There are several options to configure the commands. These options can be define
 
 * `username` (`string`): Username which is used as the default username in the `loginUser` command. (Default: `admin`)
 * `password` (`string`): Password which is used as the default password in the `loginUser` command. (Default: `password`)
-* `wpVersion` (`5.7 | 5.8`): Version of your WordPress instance. (Default: `5.8`)
+* `wpVersion` (`5.7 | 5.8 | 5.9`): Version of your WordPress instance. (Default: `5.8`)
 
 ## List of available commands
 
@@ -260,11 +260,11 @@ Visits a given admin page.
 
 ## Compatibility
 
-* WordPress 5.7, 5.8
+* WordPress 5.7, 5.8, 5.9
 * Node >=12
 * Cypress >=5.x
 
-Right now those commands are only compatible with WordPress 5.7 and 5.8.
+Right now those commands are only compatible with WordPress 5.7, 5.8 and 5.9.
 The goal is to support further WordPress versions but since there are always a lot of changes in the editor between WordPress versions it's difficult to support all of them.
 
 ## cypress-xpath included

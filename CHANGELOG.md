@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.0
+
+* [Compatibility] Compatibilty with WordPress 5.9.
+* [Feature] `wpVersion` config option now supports value `5.9`. Since WordPress 5.9 is still in beta phase the default value for this option remains at `5.8`.
+* [Fix] Fix `openGlobalBlockInserter` and `searchForBlock` commands when used with WordPress 5.9.
+
 ## 0.5.0
 
 * [Feature] Add support for cypress 9.x.
