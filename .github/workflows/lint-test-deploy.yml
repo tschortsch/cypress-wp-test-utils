@@ -46,7 +46,7 @@ jobs:
           chmod -R 767 ./ # TODO: Possibly integrate in wp-env
           npm run wp-env start
       - name: Run E2E tests
-        run: npm run test:e2e -- --config '{"env":{"cypress-wp-test-utils":{"wpVersion":${{ matrix.wp }}}}}'
+        run: npm run test:e2e'
 
   test-wp-59:
     name: Test WordPress 5.9
@@ -74,7 +74,7 @@ jobs:
           chmod -R 767 ./ # TODO: Possibly integrate in wp-env
           npm run wp-env start
       - name: Run E2E tests
-        run: npm run test:e2e -- --config '{"env":{"cypress-wp-test-utils":{"wpVersion":5.9}}}'
+        run: npm run test:e2e'
 
   deploy-dry-run:
     name: '[DRY RUN] Publish package'
