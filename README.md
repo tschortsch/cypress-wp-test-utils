@@ -36,8 +36,7 @@ There are several options to configure the commands. These options can be define
   "env": {
     "cypress-wp-test-utils": {
       "username": "myuser",
-      "password": "supersecurepassword",
-      "wpVersion": 5.7
+      "password": "supersecurepassword"
     }
   }
 }
@@ -45,7 +44,6 @@ There are several options to configure the commands. These options can be define
 
 * `username` (`string`): Username which is used as the default username in the `loginUser` command. (Default: `admin`)
 * `password` (`string`): Password which is used as the default password in the `loginUser` command. (Default: `password`)
-* `wpVersion` (`5.7 | 5.8 | 5.9`): Version of your WordPress instance. (Default: `5.8`)
 
 ## List of available commands
 

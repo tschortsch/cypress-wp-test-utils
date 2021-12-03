@@ -3,7 +3,6 @@
 export interface CypressWpTestUtilsEnv {
   username?: string;
   password?: string;
-  wpVersion?: number;
 }
 
 export interface NewPostOptions {
