@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.0
+
+* [Change] Use xpath union operator to handle selectors for different WordPress versions. With this change the `wpVersion` config option is not used anymore and can be removed from the `env` variables.
+
 ## 0.6.0
 
 * [Compatibility] Compatibility with WordPress 5.9.
