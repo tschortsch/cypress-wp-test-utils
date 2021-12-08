@@ -1,7 +1,5 @@
 /// <reference types="Cypress" />
 
-import { config } from '../../dist';
-
 context('getInputByLabel Command', () => {
   beforeEach(() => {
     cy.loginUser();
