@@ -1,5 +1,4 @@
 /// <reference types="Cypress" />
-import { config } from '../../dist';
 
 context('createNewPost Command', () => {
   beforeEach(() => {
@@ -7,14 +6,13 @@ context('createNewPost Command', () => {
   });
 
   it('should create new post', () => {
+    const titleSelector58 =
+      '//textarea[contains(@class,"editor-post-title__input")]';
+    const titleSelector =
+      '//h1[contains(@class,"editor-post-title__input")]//span[@data-rich-text-placeholder="Add title"]';
+
     cy.createNewPost();
-    if (config.wpVersion >= 5.9) {
-      cy.get('.editor-post-title__input').within(() => {
-        cy.get('[data-rich-text-placeholder="Add title"]');
-      });
-    } else {
-      cy.get('.editor-post-title__input').should('be.empty');
-    }
+    cy.xpath(`${titleSelector58} | ${titleSelector}`).should('be.empty');
   });
 
   it('should create new post with options', () => {

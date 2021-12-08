@@ -3,7 +3,6 @@
 export interface CypressWpTestUtilsEnv {
   username?: string;
   password?: string;
-  wpVersion?: number;
 }
 
 export interface NewPostOptions {
@@ -108,8 +107,12 @@ declare global {
       /**
        * Gets an input element by label.
        * @example cy.getInputByLabel('My Input');
+       * @example cy.getInputByLabel('My Input', 'element');
        */
-      getInputByLabel(label: string): Chainable<JQuery>;
+      getInputByLabel(
+        label: string,
+        labelType?: 'ariaLabel' | 'element'
+      ): Chainable<JQuery>;
 
       /**
        * Gets a select element by label.

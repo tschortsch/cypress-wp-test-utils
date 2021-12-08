@@ -8,12 +8,18 @@ context('getInputByLabel Command', () => {
     cy.createNewPost();
   });
 
-  it('should return input field by label', () => {
+  it('should return input field by label element', () => {
     cy.insertBlock('Paragraph');
     cy.ensureSidebarOpened();
-    if (config.wpVersion >= 5.9) {
-      cy.clickButton('Set custom size', 'ariaLabel');
-    }
-    cy.getInputByLabel('Custom').should('exist');
+    cy.openSidebarPanelWithTitle('Advanced');
+    cy.getInputByLabel('Additional CSS class(es)', 'element').should('exist');
+  });
+
+  // TODO test doesn't work in WP <5.9
+  it.skip('should return input field by ariaLabel', () => {
+    cy.insertBlock('Buttons');
+    cy.selectBlockByName('core/buttons');
+    cy.ensureSidebarOpened();
+    cy.getInputByLabel('Block spacing').should('exist');
   });
 });
