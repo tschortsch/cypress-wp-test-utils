@@ -82,7 +82,7 @@ jobs:
     # run always but not on tags
     if: startsWith(github.ref, 'refs/tags/') != true
 
-    needs: [ lint, test ]
+    needs: [ lint, test, 'test-wp-59' ]
 
     runs-on: ubuntu-latest
 
@@ -104,7 +104,7 @@ jobs:
     # only run on tags
     if: startsWith(github.ref, 'refs/tags/')
 
-    needs: [ lint, test ]
+    needs: [ lint, test, 'test-wp-59' ]
 
     runs-on: ubuntu-latest
 
