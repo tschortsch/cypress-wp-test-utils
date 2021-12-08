@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.1
+
+* [Fix] Fix selector in `toolbarOptionIsActive` command.
+
 ## 0.7.0
 
 * [Change] Use xpath union operator to handle selectors for different WordPress versions. With this change the `wpVersion` config option is not used anymore and can be removed from the `env` variables.

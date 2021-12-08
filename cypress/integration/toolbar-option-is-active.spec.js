@@ -8,7 +8,7 @@ context('toolbarOptionIsActive Command', () => {
 
   it('should check if toolbar option is active', () => {
     cy.insertBlock('Heading');
-    cy.clickBlockToolbarButton('Align', 1);
+    cy.clickBlockToolbarButton('Align', 1); // Align button
     cy.clickElementByText('button', 'Align text center');
     cy.toolbarOptionIsActive('Align', 'Align text center', 1, 0);
   });

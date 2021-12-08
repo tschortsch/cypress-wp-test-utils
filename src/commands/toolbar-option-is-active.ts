@@ -12,10 +12,10 @@ export const toolbarOptionIsActive = (
   toolbarIndex = 0,
   buttonIndex = 0
 ): void => {
-  const activeButtonSelector58 = `//button[contains(text(),"${buttonText}") and contains(@class,"is-active")]`;
-  const activeButtonSelector = `//button/span[contains(text(),"${buttonText}") and contains(@class,"is-active")]`;
+  const activeButtonSelector = `//button[contains(text(),"${buttonText}") and contains(@class,"is-active")]`;
+  const activeButtonWithSpanSelector = `//button[contains(@class,"is-active")]/span[contains(text(),"${buttonText}")]`;
   cy.clickBlockToolbarButton(toolbarLabel, toolbarIndex);
-  cy.xpath(`${activeButtonSelector58} | ${activeButtonSelector}`)
+  cy.xpath(`${activeButtonSelector} | ${activeButtonWithSpanSelector}`)
     .eq(buttonIndex)
     .should('exist');
   cy.clickBlockToolbarButton(toolbarLabel, toolbarIndex);
