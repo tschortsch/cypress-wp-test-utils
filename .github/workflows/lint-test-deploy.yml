@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js 16
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 16
       - name: Install dependencies
@@ -26,14 +26,14 @@ jobs:
 
     strategy:
       matrix:
-        node: [ '12', '14', '16' ]
-        cypress: [ '5.6.0', '6.9.1', '7.7.0', '8.7.0', '9.1.1' ]
-        wp: [ '5.7', '5.8' ]
+        node: [ '12', '14', '16', '18' ]
+        cypress: [ '5.6.0', '6.9.1', '7.7.0', '8.7.0', '9.6.1' ]
+        wp: [ '5.7', '5.8', '5.9' ]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - name: Install dependencies
@@ -48,27 +48,27 @@ jobs:
       - name: Run E2E tests
         run: npm run test:e2e
 
-  test-wp-59:
-    name: Test WordPress 5.9
+  test-wp-60:
+    name: Test WordPress 6.0
 
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node: [ '12', '14', '16' ]
-        cypress: [ '5.6.0', '6.9.1', '7.7.0', '8.7.0', '9.1.1' ]
+        node: [ '12', '14', '16', '18' ]
+        cypress: [ '5.6.0', '6.9.1', '7.7.0', '8.7.0', '9.6.1' ]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - name: Install dependencies
         run: CYPRESS_INSTALL_BINARY=${{ matrix.cypress }} npm ci
-      - name: "Configure environment with WP 5.9"
+      - name: "Configure environment with WP 6.0"
         run: |
-          echo -e '{\n\t"core": "https://wordpress.org/wordpress-5.9-beta2.zip"\n}' > ./.wp-env.override.json
+          echo -e '{\n\t"core": "https://wordpress.org/wordpress-6.0-RC1.zip"\n}' > ./.wp-env.override.json
       - name: Start WordPress environment
         run: |
           chmod -R 767 ./ # TODO: Possibly integrate in wp-env
@@ -82,15 +82,15 @@ jobs:
     # run always but not on tags
     if: startsWith(github.ref, 'refs/tags/') != true
 
-    needs: [ lint, test, 'test-wp-59' ]
+    needs: [ lint, test, 'test-wp-60' ]
 
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Use Node.js 16
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
@@ -104,15 +104,15 @@ jobs:
     # only run on tags
     if: startsWith(github.ref, 'refs/tags/')
 
-    needs: [ lint, test, 'test-wp-59' ]
+    needs: [ lint, test, 'test-wp-60' ]
 
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Use Node.js 16
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
