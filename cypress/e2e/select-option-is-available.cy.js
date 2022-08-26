@@ -7,8 +7,14 @@ context('selectOptionIsAvailable Command', () => {
   });
 
   it('should check if select option is available', () => {
-    cy.insertBlock('Archives');
-    cy.ensureSidebarOpened();
-    cy.selectOptionIsAvailable('Group by', 'weekly');
+    if (Cypress.env('wp_version') && Cypress.env('wp_version') >= 6.0) {
+      cy.insertBlock('Archives');
+      cy.ensureSidebarOpened();
+      cy.selectOptionIsAvailable('Group by', 'weekly');
+    } else {
+      cy.insertBlock('Buttons');
+      cy.ensureSidebarOpened();
+      cy.selectOptionIsAvailable('Default Style', 'fill');
+    }
   });
 });

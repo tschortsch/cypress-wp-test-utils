@@ -7,8 +7,14 @@ context('getSelectByLabel Command', () => {
   });
 
   it('should return select element by label', () => {
-    cy.insertBlock('Archives');
-    cy.ensureSidebarOpened();
-    cy.getSelectByLabel('Group by').should('have.value', 'monthly');
+    if (Cypress.env('wp_version') && Cypress.env('wp_version') >= 6.0) {
+      cy.insertBlock('Archives');
+      cy.ensureSidebarOpened();
+      cy.getSelectByLabel('Group by').should('have.value', 'monthly');
+    } else {
+      cy.insertBlock('Buttons');
+      cy.ensureSidebarOpened();
+      cy.getSelectByLabel('Default Style').should('have.value', '');
+    }
   });
 });
