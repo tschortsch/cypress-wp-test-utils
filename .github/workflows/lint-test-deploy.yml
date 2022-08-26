@@ -67,7 +67,11 @@ jobs:
           chmod -R 767 ./ # TODO: Possibly integrate in wp-env
           npm run wp-env start
       - name: Run E2E tests
+        if: ${{ matrix.cypress == '10.6.0' }}
         run: npm run test:e2e
+      - name: Run E2E tests (Cypress < 10.x)
+        if: ${{ matrix.cypress != '10.6.0' }}
+        run: npm run test:e2e -- --config-file cypress-legacy.json
 
   deploy-dry-run:
     name: '[DRY RUN] Publish package'
