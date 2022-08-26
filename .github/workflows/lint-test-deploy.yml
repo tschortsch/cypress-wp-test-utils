@@ -50,6 +50,16 @@ jobs:
             cypress: '8.7.0'
           - node: '14'
             cypress: '9.7.0'
+          - node: '18'
+            cypress: '5.6.0'
+          - node: '18'
+            cypress: '6.9.1'
+          - node: '18'
+            cypress: '7.7.0'
+          - node: '18'
+            cypress: '8.7.0'
+          - node: '18'
+            cypress: '9.7.0'
 
     steps:
       - uses: actions/checkout@v3

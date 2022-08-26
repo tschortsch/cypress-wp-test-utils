@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.0
+
+* [Feature] Add support for cypress 10.x.
+
 ## 0.7.1
 
 * [Fix] Fix selector in `toolbarOptionIsActive` command.
