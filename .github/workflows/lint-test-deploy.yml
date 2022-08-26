@@ -78,10 +78,10 @@ jobs:
           npm run wp-env start
       - name: Run E2E tests
         if: ${{ matrix.cypress == '10.6.0' }}
-        run: npm run test:e2e
+        run: npm run test:e2e --env wp_version=${{ matrix.wp }}
       - name: Run E2E tests (Cypress < 10.x)
         if: ${{ matrix.cypress != '10.6.0' }}
-        run: npm run test:e2e -- --config-file cypress-legacy.json
+        run: npm run test:e2e -- --config-file cypress-legacy.json --env wp_version=${{ matrix.wp }}
 
   deploy-dry-run:
     name: '[DRY RUN] Publish package'
