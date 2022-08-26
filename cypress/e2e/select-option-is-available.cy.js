@@ -7,8 +7,8 @@ context('selectOptionIsAvailable Command', () => {
   });
 
   it('should check if select option is available', () => {
-    cy.insertBlock('Buttons');
+    cy.insertBlock('Archives');
     cy.ensureSidebarOpened();
-    cy.selectOptionIsAvailable('Default Style', 'fill');
+    cy.selectOptionIsAvailable('Group by', 'weekly');
   });
 });
