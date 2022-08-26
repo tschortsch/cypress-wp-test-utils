@@ -27,8 +27,8 @@ jobs:
     strategy:
       matrix:
         node: [ '12', '14', '16', '18' ]
-        cypress: [ '5.6.0', '6.9.1', '7.7.0', '8.7.0', '9.6.1' ]
-        wp: [ '5.7', '5.8', '5.9' ]
+        cypress: [ '5.6.0', '6.9.1', '7.7.0', '8.7.0', '9.7.0', '10.6.0' ]
+        wp: [ '5.7', '5.8', '5.9', '6.0' ]
 
     steps:
       - uses: actions/checkout@v3
@@ -48,41 +48,13 @@ jobs:
       - name: Run E2E tests
         run: npm run test:e2e
 
-  test-wp-60:
-    name: Test WordPress 6.0
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node: [ '12', '14', '16', '18' ]
-        cypress: [ '5.6.0', '6.9.1', '7.7.0', '8.7.0', '9.6.1' ]
-
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
-      - name: Install dependencies
-        run: CYPRESS_INSTALL_BINARY=${{ matrix.cypress }} npm ci
-      - name: "Configure environment with WP 6.0"
-        run: |
-          echo -e '{\n\t"core": "https://wordpress.org/wordpress-6.0-RC1.zip"\n}' > ./.wp-env.override.json
-      - name: Start WordPress environment
-        run: |
-          chmod -R 767 ./ # TODO: Possibly integrate in wp-env
-          npm run wp-env start
-      - name: Run E2E tests
-        run: npm run test:e2e
-
   deploy-dry-run:
     name: '[DRY RUN] Publish package'
 
     # run always but not on tags
     if: startsWith(github.ref, 'refs/tags/') != true
 
-    needs: [ lint, test, 'test-wp-60' ]
+    needs: [ lint, test ]
 
     runs-on: ubuntu-latest
 
@@ -104,7 +76,7 @@ jobs:
     # only run on tags
     if: startsWith(github.ref, 'refs/tags/')
 
-    needs: [ lint, test, 'test-wp-60' ]
+    needs: [ lint, test ]
 
     runs-on: ubuntu-latest
 
