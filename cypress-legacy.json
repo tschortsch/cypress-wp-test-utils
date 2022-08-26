@@ -1,4 +1,7 @@
 {
+  "integrationFolder": "cypress/e2e",
+  "supportFile": "cypress/support/e2e.js",
+  "testFiles": "**/*.cy.js",
   "baseUrl": "http://localhost:8889",
   "video": false,
   "screenshotOnRunFailure": false,
