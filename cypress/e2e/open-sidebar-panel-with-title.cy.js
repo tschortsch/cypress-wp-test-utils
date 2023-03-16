@@ -12,7 +12,9 @@ context('openSidebarPanelWithTitle Command', () => {
       cy.get('h3.edit-post-post-link__preview-label').contains('View Post');
     } else {
       cy.openSidebarPanelWithTitle('Categories');
-      cy.get('label.components-checkbox-control__label').contains('Uncategorized');
+      cy.get('label.components-checkbox-control__label').contains(
+        'Uncategorized'
+      );
     }
   });
 });
