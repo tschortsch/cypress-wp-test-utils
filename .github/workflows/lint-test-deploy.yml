@@ -10,10 +10,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 16
+      - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - name: Install dependencies
         run: npm ci
       - name: Lint
@@ -27,39 +27,22 @@ jobs:
     strategy:
       matrix:
         node: [ '12', '14', '16', '18' ]
-        cypress: [ '5.6.0', '6.9.1', '7.7.0', '8.7.0', '9.7.0', '10.6.0' ]
-        wp: [ '5.7', '5.8', '5.9', '6.0' ]
+        cypress: [ '5.6.0', '11.1.0', '12.8.1' ]
+        wp: [ '5.7', '5.8', '5.9', '6.0', '6.1' ]
         exclude:
           - node: '12'
             cypress: '5.6.0'
+          # Cypress 11 is the last version which supports Node 12 (ignore newer versions)
           - node: '12'
-            cypress: '6.9.1'
-          - node: '12'
-            cypress: '7.7.0'
-          - node: '12'
-            cypress: '8.7.0'
-          - node: '12'
-            cypress: '9.7.0'
+            cypress: '12.8.1'
           - node: '14'
             cypress: '5.6.0'
           - node: '14'
-            cypress: '6.9.1'
-          - node: '14'
-            cypress: '7.7.0'
-          - node: '14'
-            cypress: '8.7.0'
-          - node: '14'
-            cypress: '9.7.0'
-          - node: '18'
+            cypress: '11.1.0'
+          - node: '16'
             cypress: '5.6.0'
-          - node: '18'
-            cypress: '6.9.1'
-          - node: '18'
-            cypress: '7.7.0'
-          - node: '18'
-            cypress: '8.7.0'
-          - node: '18'
-            cypress: '9.7.0'
+          - node: '16'
+            cypress: '11.1.0'
 
     steps:
       - uses: actions/checkout@v3
@@ -68,7 +51,12 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - name: Install dependencies
+        if: ${{ matrix.node >= '16' }}
         run: CYPRESS_INSTALL_BINARY=${{ matrix.cypress }} npm ci
+      - name: Install dependencies (Node < 16)
+        if: ${{ matrix.node < '16' }}
+        # npm ci command can't be used in Node versions < 16 because of newer lockfile
+        run: CYPRESS_INSTALL_BINARY=${{ matrix.cypress }} npm i
       - name: "Configure environment with WP ${{ matrix.wp }}"
         run: |
           echo -e '{\n\t"core": "WordPress/WordPress#${{ matrix.wp }}"\n}' > ./.wp-env.override.json
@@ -77,10 +65,10 @@ jobs:
           chmod -R 767 ./ # TODO: Possibly integrate in wp-env
           npm run wp-env start
       - name: Run E2E tests
-        if: ${{ matrix.cypress == '10.6.0' }}
+        if: ${{ matrix.cypress == '10.11.0' || matrix.cypress == '11.1.0' || matrix.cypress == '12.8.1' }}
         run: npm run test:e2e -- --env wp_version=${{ matrix.wp }}
       - name: Run E2E tests (Cypress < 10.x)
-        if: ${{ matrix.cypress != '10.6.0' }}
+        if: ${{ matrix.cypress != '10.11.0' && matrix.cypress != '11.1.0' && matrix.cypress != '12.8.1' }}
         run: npm run test:e2e -- --config-file cypress-legacy.json --env wp_version=${{ matrix.wp }}
 
   deploy-dry-run:
@@ -96,10 +84,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js 16
+      - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           registry-url: 'https://registry.npmjs.org'
 
       - name: '[DRY RUN] Publish package to npm registry'
@@ -118,10 +106,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js 16
+      - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           registry-url: 'https://registry.npmjs.org'
 
       - name: Publish package to npm registry

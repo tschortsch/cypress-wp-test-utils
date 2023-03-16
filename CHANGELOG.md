@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0
+
+* [Feature] Add support for cypress 11.x & 12.x.
+* [Compatibility] Compatibility with WordPress 6.1.
+* [Fix] Use `@cypress/xpath` instead of depreacted `cypress-xpath` package.
+
 ## 0.8.0
 
 * [Feature] Add support for cypress 10.x.

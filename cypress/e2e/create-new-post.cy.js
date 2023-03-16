@@ -45,9 +45,11 @@ context('createNewPost Command', () => {
   });
 
   it('should leave welcome guide option with option', () => {
-    cy.createNewPost({
-      showWelcomeGuide: true,
-    });
-    cy.get('.edit-post-welcome-guide').should('exist');
+    if (Cypress.env('wp_version') && Cypress.env('wp_version') < 6.1) {
+      cy.createNewPost({
+        showWelcomeGuide: true,
+      });
+      cy.get('.edit-post-welcome-guide').should('exist');
+    }
   });
 });

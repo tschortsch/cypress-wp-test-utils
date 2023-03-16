@@ -7,8 +7,10 @@ context('closeWelcomeGuide Command', () => {
   });
 
   it('should close welcome guide', () => {
-    cy.get('.edit-post-welcome-guide').should('exist');
-    cy.closeWelcomeGuide();
-    cy.get('.edit-post-welcome-guide').should('not.exist');
+    if (Cypress.env('wp_version') && Cypress.env('wp_version') < 6.1) {
+      cy.get('.edit-post-welcome-guide').should('exist');
+      cy.closeWelcomeGuide();
+      cy.get('.edit-post-welcome-guide').should('not.exist');
+    }
   });
 });

@@ -1,5 +1,5 @@
 module.exports = {
-  "__version": "10.6.0",
+  "__version": "12.8.1",
   "Actions": {
     "example test": {
       "1": "<!-- wp:heading -->\n<h2></h2>\n<!-- /wp:heading -->"
