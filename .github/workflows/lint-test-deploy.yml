@@ -42,6 +42,7 @@ jobs:
             cypress: '9.7.0'
           - node: '12'
             cypress: '10.11.0'
+          # Cypress 11 is the last version which supports Node 12 (ignore newer versions)
           - node: '12'
             cypress: '12.8.1'
           - node: '14'
