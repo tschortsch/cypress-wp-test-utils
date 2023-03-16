@@ -7,6 +7,7 @@ context('getCheckboxByLabel Command', () => {
   });
 
   it('should return checkbox by label', () => {
+    cy.ensureSidebarOpened();
     cy.getCheckboxByLabel('Stick to the top of the blog')
       .should('exist')
       .and('not.be.checked');
