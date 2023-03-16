@@ -265,7 +265,7 @@ Visits a given admin page.
 Right now those commands are only compatible with WordPress 5.7, 5.8, 5.9 and 6.0.
 The goal is to support further WordPress versions but since there are always a lot of changes in the editor between WordPress versions it's difficult to support all of them.
 
-## cypress-xpath included
+## @cypress/xpath included
 
-This package uses and includes the [cypress-xpath](https://www.npmjs.com/package/cypress-xpath) command.
+This package uses and includes the [@cypress/xpath](https://www.npmjs.com/package/@cypress/xpath) command.
 If you're using it as well in your tests you don't need to include it again.

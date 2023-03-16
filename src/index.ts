@@ -1,4 +1,4 @@
-import 'cypress-xpath';
+import '@cypress/xpath';
 
 import { activatePlugin } from './commands/activate-plugin';
 import { clickBlockToolbarButton } from './commands/click-block-toolbar-button';
