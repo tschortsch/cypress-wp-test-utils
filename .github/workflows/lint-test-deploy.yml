@@ -80,7 +80,12 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - name: Install dependencies
+        if: ${{ matrix.node >= '16' }}
         run: CYPRESS_INSTALL_BINARY=${{ matrix.cypress }} npm ci
+      - name: Install dependencies (Node < 16)
+        if: ${{ matrix.node < '16' }}
+        # npm ci command can't be used in Node versions < 16 because of newer lockfile
+        run: CYPRESS_INSTALL_BINARY=${{ matrix.cypress }} npm i
       - name: "Configure environment with WP ${{ matrix.wp }}"
         run: |
           echo -e '{\n\t"core": "WordPress/WordPress#${{ matrix.wp }}"\n}' > ./.wp-env.override.json
