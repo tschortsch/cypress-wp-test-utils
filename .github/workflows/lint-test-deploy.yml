@@ -27,50 +27,20 @@ jobs:
     strategy:
       matrix:
         node: [ '12', '14', '16', '18' ]
-        cypress: [ '5.6.0', '6.9.1', '7.7.0', '8.7.0', '9.7.0', '10.11.0', '11.1.0', '12.8.1' ]
+        cypress: [ '5.6.0', '11.1.0', '12.8.1' ]
         wp: [ '5.7', '5.8', '5.9', '6.0', '6.1' ]
         exclude:
           - node: '12'
             cypress: '5.6.0'
-          - node: '12'
-            cypress: '6.9.1'
-          - node: '12'
-            cypress: '7.7.0'
-          - node: '12'
-            cypress: '8.7.0'
-          - node: '12'
-            cypress: '9.7.0'
-          - node: '12'
-            cypress: '10.11.0'
           # Cypress 11 is the last version which supports Node 12 (ignore newer versions)
           - node: '12'
             cypress: '12.8.1'
           - node: '14'
             cypress: '5.6.0'
           - node: '14'
-            cypress: '6.9.1'
-          - node: '14'
-            cypress: '7.7.0'
-          - node: '14'
-            cypress: '8.7.0'
-          - node: '14'
-            cypress: '9.7.0'
-          - node: '14'
-            cypress: '10.11.0'
-          - node: '14'
             cypress: '11.1.0'
           - node: '16'
             cypress: '5.6.0'
-          - node: '16'
-            cypress: '6.9.1'
-          - node: '16'
-            cypress: '7.7.0'
-          - node: '16'
-            cypress: '8.7.0'
-          - node: '16'
-            cypress: '9.7.0'
-          - node: '16'
-            cypress: '10.11.0'
           - node: '16'
             cypress: '11.1.0'
 
